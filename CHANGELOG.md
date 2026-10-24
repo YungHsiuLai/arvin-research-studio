@@ -3,6 +3,14 @@
 Release notes for Arvin Research Studio. This public-safe file is maintained in
 the research source repository and copied to the public website repository.
 
+## 2026-10-25 — Research design, methods and analysis records
+
+- Added Research design & methods as the second, global navigation item, organized by method with expandable article-specific variants.
+- Seeded 12 methods from the authored Farronato–Zervas handout, with purposes, inputs/outputs, assumptions, diagnostics and implementation choices.
+- Converted both handout languages into HTML with native mathematical notation, the full comparison table and footnotes. Rebuilt its branching research-design pipeline as interactive HTML.
+- Added dataset-scoped Data analysis with two documented existing assistant-run audits, execution details and separate local result snapshots. Datasets without recorded analyses remain empty.
+- Kept actual analysis results local; the public version displays only reviewed summaries. Added source-hash checks, record validation and maintenance instructions for future additions.
+
 ## 2026-10-25 — Dataset navigation and table controls
 
 - Added a dataset selector beside the language selector on dataset pages. Switching datasets preserves the current section and language.
