@@ -3,6 +3,14 @@
 Release notes for Arvin Research Studio. This public-safe file is maintained in
 the research source repository and copied to the public website repository.
 
+## 2026-10-25 — Live measurement checks and selectable method formulas
+
+- Rechecked the registered WRDS tables with read-only schema and aggregate queries. Updated preview SQL types, category descriptions, Supply Chain currency/source links and its historical table's observed subset relationship.
+- Added dated aggregate scope facts for Revelio: exact counts where queries completed, estimates where large scans timed out, verified date extrema and server storage with partitions counted once. Kept missing provider definitions and inaccessible codebooks explicit.
+- Corrected the old Compustat sample description: its current selection includes USD and CAD reporting currencies, so the sales threshold is not uniformly a US-dollar threshold.
+- Typeset method, article-variant and pipeline formulas as selectable MathML. Added Copy LaTeX to formulas, including the full HTML handout, with controls that appear on hover or keyboard focus.
+- Added one concise practical scenario in each language for all 12 methods. Updated both versions, validation and maintenance instructions.
+
 ## 2026-10-25 — Research design, methods and analysis records
 
 - Added Research design & methods as the second, global navigation item, organized by method with expandable article-specific variants.
