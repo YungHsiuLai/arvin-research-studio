@@ -3,6 +3,24 @@
 Release notes for Arvin Research Studio. This public-safe file is maintained in
 the research source repository and copied to the public website repository.
 
+## 2026-10-26 — Field semantics, focused catalogue and navigation
+
+- Adopted small, independently verified website releases, with source and public commits and deployment checks after each completed stage instead of waiting for a long collection or analysis task to finish.
+
+- Reviewed categorical and range semantics across all 505 active fields, including text categories, flags, ordinal levels, probabilities, scores, exceptional codes and interval endpoints. Added supported plain-language meanings while keeping missing provider definitions, domains and thresholds explicit.
+- Retired the fully contained Supply Chain subset from both websites and active metadata; preserved its internal archive and historical evidence, and prevented re-import. The active catalogue now contains 42 tables and 505 fields, with Supply Chain limited to its 14-column main table.
+- Added an always-visible Home / 首頁 link beside the top menu, preserving language and wrapping on mobile.
+- Added a fourth concise All fields summary for potential IVs, measurable DVs and identifiers for external-DV linkage, with conditional measurement limits rather than generated research topics.
+- Added the full publisher-checked Farronato–Zervas citation and DOI below the research-design section. Preserved the original article title in both languages and kept bibliography verification separate from the handout's methodological and empirical claims.
+- Added an EDGAR-only Key content page for the two EX-10 agreements, with short original quotations, clause locations, bilingual explanations and interpretation limits. Kept source hashes and an explicit offline quotation check separate from ordinary metadata builds; excerpts do not add dictionary fields or analysis records.
+- Linked EX-10 sample cards to their contract content and moved the Use and date scope fold below the cards, retaining collected-file dates above them. Original quotations stay English; source links open the full SEC documents.
+
+- Removed the execution-versus-mastery reminder from Data analysis in both languages.
+- Moved the two preparation-audit records out of Data analysis without changing their metadata or evidence references. The internal archive is excluded from both website versions; no analyses are currently registered.
+- Clarified that Data analysis includes substantive descriptive statistics, distributions, trends, associations and model results. Coverage, storage, access, schema and data-quality checks remain preparation; analysis does not require a causal claim or a publication-ready study.
+- Added a bilingual dictionary search-scope selector: All, Column names only, or Other information. Changing scope preserves the query and existing filters; visible fields, accessible announcements and CSV share the same results.
+- Explained non-exclusive, exclusive and sole licensing in RoyaltyStat measurement notes, including licensor self-use and contractual scope. Preserved the original definition and observed code associations; general terminology does not resolve the provider's unknown -1 code.
+
 ## 2026-10-26 — Shorter Studio home
 
 - Removed the introductory paragraph from Studio home in both languages. Kept the title, short tagline, catalogue counts and two topic entrances; updated local and public maintenance guidance.
