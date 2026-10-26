@@ -3,6 +3,12 @@
 Release notes for Arvin Research Studio. This public-safe file is maintained in
 the research source repository and copied to the public website repository.
 
+## 2026-10-26 — First technology-license analysis
+
+- Added an EDGAR descriptive pilot covering two distinct technology-license agreements, with six license features, four project features and a five-step Cue–LG worked example. The target remains 450 agreements; collection and coding are ongoing.
+- Added collapsible bilingual analysis tables with clause locations and official source links, separate from private result files. Show contract-level denominators and preserve unknown, unstated, redacted and inapplicable values.
+- Distinguished overlapping license grants, contract/project periods, signatories and other partners, and governance seats or support capacity from total project headcount. Counts describe the two selected cases, not industry prevalence or verified contract performance.
+
 ## 2026-10-26 — Separate IV and DV summary bullets
 
 - Split each dataset's potential-variable summary into three nested bullets: IV, DV and External DVs. Bold only these labels, preserve the explanatory text and show one language at a time.
