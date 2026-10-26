@@ -3,6 +3,19 @@
 Release notes for Arvin Research Studio. This public-safe file is maintained in
 the research source repository and copied to the public website repository.
 
+## 2026-10-26 — Studio home, B2B categories and SEC contract examples
+
+- Applied the same five categories to RoyaltyStat, FactSet Revere, InfraClear and Supply Chain, with bilingual field-level reasons and complete, nonoverlapping coverage.
+- Added dataset-wide references for multi-table categories so identical column names in different tables retain separate classifications and notes. Category filters, table selection, search and CSV exports share the same scope.
+- Kept empty categories and unresolved measurement meanings explicit. Generic extracted values do not automatically establish governance or performance; Supply Chain's historical subset adds no independent coverage.
+- Removed the duplicate dataset switcher from the sidebar and the field-result counter beside dictionary search. Retained the top dataset selector and All fields/category counts.
+- Added a separate Studio home with two topic entrances and metadata-derived dataset, method and research-design counts; the dataset listing remains a separate page.
+- Replaced positioned arrow symbols in the research-design pipeline with measured connectors that attach to the corresponding card borders, with longer spacing and responsive updates in both the design view and complete handout.
+- Added verified EX-10 technology-license and collaboration agreements alongside the original EX-11 examples. Preserved source descriptions, document hashes and filing identities in a general exhibit manifest.
+- Clarified that EX-11/EX-12 requirements ended on 2018-11-05 and their numbers remain vacant. Show collected-document filing dates separately from regulatory dates and unaudited whole-category coverage.
+- Added a concise bilingual academic/non-commercial internal-reference notice and a non-rendered external-AI access/use policy. These express restrictions and do not implement access control.
+- Updated both versions, classification checks, browser verification and maintenance guidance.
+
 ## 2026-10-26 — Separate dataset and methods navigation
 
 - Reduced the main sidebar to exactly two independent topics on every page: All datasets and Research design & methods. Dataset child links remain in the upper dataset navigation.
