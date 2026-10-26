@@ -3,6 +3,13 @@
 Release notes for Arvin Research Studio. This public-safe file is maintained in
 the research source repository and copied to the public website repository.
 
+## 2026-10-26 — Separate dataset and methods navigation
+
+- Reduced the main sidebar to exactly two independent topics on every page: All datasets and Research design & methods. Dataset child links remain in the upper dataset navigation.
+- Limited the persistent page links to dataset sections. Methods uses its own Method catalogue and Research design pipelines controls, without dataset links or a blank navigation row.
+- Preserved language switching, dataset section links and dynamic header offsets; updated both versions and maintenance guidance.
+- Hid redundant Schema filters for datasets with only one registered schema, while preserving original identifiers and multi-schema filtering.
+
 ## 2026-10-26 — Direct section navigation and complete field categories
 
 - Added persistent links for switching between available workspace sections without opening the sidebar, with an active-page indicator and mobile horizontal scrolling. Global pages retain only the two global destinations; private sections remain local.
