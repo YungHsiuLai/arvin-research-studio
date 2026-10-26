@@ -3,6 +3,13 @@
 Release notes for Arvin Research Studio. This public-safe file is maintained in
 the research source repository and copied to the public website repository.
 
+## 2026-10-26 — Seventeen reviewed license agreements
+
+- Added eight independently checked main-agreement families to the cumulative EDGAR analysis (N=17), preserving the nine-agreement and two-case runs. The 450-agreement target continues; overlapping runs are not additive.
+- Published 50 reviewed report rows with 17 official sources, grant-status comparisons, feature missingness, technology areas and concise case summaries. Five clause/scope corrections were explicitly adjudicated before acceptance.
+- Separated fixed initial license terms (three observations) from project duration and actual relationship length. Partial project evidence and unverified grant triggers remain visible; complete project duration and total headcount are still unavailable.
+- Added validation for grant categories and scoped initial-term statistics; updated both dashboard builds and maintenance guidance.
+
 ## 2026-10-26 — Nine-agreement analysis and measurement states
 
 - Added a cumulative nine-agreement EDGAR analysis after independent checks of seven new main agreements. Preserved the two-case pilot and Cue–LG walkthrough; the 450-agreement target remains in progress. The new 36-row report shows scoped licensing counts, project evidence, information states, technology areas and official source links.
