@@ -42,6 +42,7 @@
 .edgar-section .preview-table{table-layout:fixed;width:100%}.edgar-section .preview-table th,.edgar-section .preview-table td{white-space:normal;overflow:visible;text-overflow:clip;overflow-wrap:anywhere;max-width:none;line-height:1.7;vertical-align:top}.edgar-section .preview-table th:first-child{width:24%}.edgar-section .preview-table th:last-child{width:36%}.edgar-section>p,.edgar-section label{font-size:12px;line-height:1.8;margin:10px 0}
 .dataset-facts{margin:0 0 22px;scroll-margin-top:90px}.dataset-facts[hidden]{display:none!important}.dataset-facts-list{margin:0;padding-left:20px;list-style:disc}.dataset-fact{font-size:12px;line-height:1.8;color:#6b7d6d;overflow-wrap:anywhere}.dataset-fact+.dataset-fact{margin-top:4px}.dataset-fact-label{font-weight:600;color:#456450}.dataset-fact-value{display:inline}
 @media(max-width:700px){.dataset-facts{scroll-margin-top:64px}}
+.dataset-fact-roles>.dataset-fact-label{font-weight:400}.dataset-role-list{margin:2px 0 0;padding-left:22px;list-style:circle}.dataset-role+.dataset-role{margin-top:3px}.dataset-role-label{font-weight:600}.dataset-role-value{font-weight:400}
 @media(max-width:980px){.topbar{gap:10px}.topbar-right{display:none}.language-control select{min-width:99px;padding:6px;font-size:10px}.topbar-left{flex:1;overflow:hidden}.breadcrumb{min-width:0;overflow:hidden}.breadcrumb #breadcrumb-current{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}}
 @media(max-width:700px){.topbar{padding-left:12px;padding-right:10px}.language-control select{min-width:96px}.topbar-left{gap:7px}.breadcrumb #breadcrumb-dataset{display:none}.breadcrumb-separator{display:none}.sidebar-autohide:not(.sidebar-collapsed) .topbar{padding-left:6px;padding-right:6px;gap:5px}.sidebar-autohide:not(.sidebar-collapsed) .topbar-left{flex:0 0 auto}.sidebar-autohide:not(.sidebar-collapsed) .breadcrumb{display:none}.sidebar-autohide:not(.sidebar-collapsed) .sidebar-toggle{padding:5px}.sidebar-autohide:not(.sidebar-collapsed) .language-control select{min-width:91px;max-width:96px}}
 @media(max-width:700px){.sidebar-autohide .sidebar-bottom{display:block}.sidebar-autohide:not(.sidebar-collapsed) .fold-summary{flex-direction:column;gap:8px}.sidebar-autohide:not(.sidebar-collapsed) .fold-heading{width:100%}.sidebar-autohide:not(.sidebar-collapsed) .fold-indicator{align-self:flex-end}.sidebar-autohide:not(.sidebar-collapsed) .fold-indicator .fold-open-label,.sidebar-autohide:not(.sidebar-collapsed) .fold-indicator .fold-closed-label{max-width:none}}
@@ -1389,6 +1390,21 @@ body.is-resizing-column,body.is-resizing-column *{cursor:col-resize!important;us
       const labels = [['時間區間', 'time'], ['Sample size', 'sample'], ['File size', 'size']];
       if (!selected && facts?.measurement_roles_zh && facts?.measurement_roles_en) labels.push(['潛在 IV／DV', 'measurement_roles']);
       const items = labels.map(([label, key]) => {
+        if (key === 'measurement_roles') {
+          const split = value => value.match(/^IV[:：]\s*([\s\S]*?)\s*DV[:：]\s*([\s\S]*?)\s*(?:External DVs:|外部 DV：)\s*([\s\S]*)$/)?.slice(1);
+          const zh = split(facts.measurement_roles_zh), en = split(facts.measurement_roles_en);
+          if (zh && en) {
+            const roleLabels = [['IV', 'IV'], ['DV', 'DV'], ['外部 DV', 'External DVs']];
+            const roles = roleLabels.map(([zhLabel, enLabel], index) => {
+              const term = rawText('strong', 'dataset-role-label', zhLabel);
+              term.dataset.i18nZh = zhLabel; term.dataset.i18nEn = enLabel;
+              const value = rawText('span', 'dataset-role-value', zh[index]);
+              value.dataset.i18nZh = zh[index]; value.dataset.i18nEn = en[index];
+              return node('li', 'dataset-role', term, ': ', value);
+            });
+            return node('li', 'dataset-fact dataset-fact-roles', text('span', 'dataset-fact-label', label), node('ul', 'dataset-role-list', roles));
+          }
+        }
         const value = rawText('span', 'dataset-fact-value', facts?.[`${key}_zh`] || '尚未確認。');
         value.dataset.i18nZh = facts?.[`${key}_zh`] || '尚未確認。';
         value.dataset.i18nEn = facts?.[`${key}_en`] || 'Not yet verified.';

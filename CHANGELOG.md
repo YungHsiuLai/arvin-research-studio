@@ -3,6 +3,11 @@
 Release notes for Arvin Research Studio. This public-safe file is maintained in
 the research source repository and copied to the public website repository.
 
+## 2026-10-26 — Separate IV and DV summary bullets
+
+- Split each dataset's potential-variable summary into three nested bullets: IV, DV and External DVs. Bold only these labels, preserve the explanatory text and show one language at a time.
+- Kept the four main All fields bullets and the three scope bullets for individual tables; verified desktop and mobile layouts in both versions.
+
 ## 2026-10-26 — Field semantics, focused catalogue and navigation
 
 - Adopted small, independently verified website releases, with source and public commits and deployment checks after each completed stage instead of waiting for a long collection or analysis task to finish.
