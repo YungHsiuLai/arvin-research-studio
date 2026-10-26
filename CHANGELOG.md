@@ -3,6 +3,14 @@
 Release notes for Arvin Research Studio. This public-safe file is maintained in
 the research source repository and copied to the public website repository.
 
+## 2026-10-26 — Thirty-three reviewed license agreements
+
+- Expanded the cumulative EDGAR analysis to 33 reviewed main families, with 67 bilingual report rows and 33 official sources. Previous runs and the worked example remain available; the 450 target continues.
+- Preserved coexclusive rights as a distinct category, existing third-party rights and unverified future grant transitions. Four independently reviewed scope corrections were explicitly adjudicated; prior 25 records are unchanged.
+- Distinguished named contracting/signature roles from independent legal persons. Thirteen agreements support defined work packages, two have partial positive evidence and eighteen remain unresolved; complete project duration/headcount remain unavailable.
+- Updated both dashboard versions and documentation; clarified that the Argus grant trigger concerns signing the separate R&D contract, not performing its research.
+- Fixed same-day analysis ordering to use recorded execution instants, so the latest cumulative run appears first. Added timezone/legacy-fallback regression checks; private provenance remains outside the public artifact.
+
 ## 2026-10-26 — Twenty-five reviewed license agreements
 
 - Expanded the cumulative EDGAR analysis from 17 to 25 reviewed main-agreement families, with 58 report rows and 25 official sources. Earlier runs and the Cue–LG walkthrough are preserved; the 450 target continues.
