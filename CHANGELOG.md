@@ -3,6 +3,12 @@
 Release notes for Arvin Research Studio. This public-safe file is maintained in
 the research source repository and copied to the public website repository.
 
+## 2026-10-26 — Capacity for growing reviewed analyses
+
+- Increased reviewed-report capacity to 1,000 sources and 1,000 rows per section, supporting the 450-agreement target plus supplementary evidence. Oversized metadata is rejected rather than truncated; section/column limits and all privacy/reference checks remain.
+- Added synthetic 450-source / 450-row round-trip and browser coverage, including the last row, both languages, source links, folding and mobile scrolling. Synthetic cases stay outside the research catalog and published artifacts.
+- Kept the 42 accepted agreements and all prior analysis runs unchanged. Updated local/public maintenance guidance; capacity is not research progress or automatic acceptance.
+
 ## 2026-10-26 — Forty-two reviewed license agreements
 
 - Expanded cumulative EDGAR analysis to 42 reviewed main families, with 77 bilingual report rows and 42 official sources. Previous runs and the worked example remain available; 408 agreements remain toward the 450 target.
