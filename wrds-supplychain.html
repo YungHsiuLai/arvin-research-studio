@@ -968,7 +968,8 @@ body.is-resizing-column,body.is-resizing-column *{cursor:col-resize!important;us
     const stack = element('div', 'analysis-records');
     analyses.forEach(record => {
       const status = /fail|error/.test(String(record.status)) ? 'failed' : /partial/.test(String(record.status)) ? 'partial' : /complete|success|verified/.test(String(record.status)) ? 'completed' : 'recorded';
-      const metadata = element('div', 'analysis-record-meta', value('span', 'library-category-badge', record, 'type'), raw('time', '', record.run_date || '—'), label('span', 'analysis-executor', record.executed_by === 'user' ? 'user' : 'assistant'), label('span', 'badge neutral', status));
+      const metadata = element('div', 'analysis-record-meta', value('span', 'library-category-badge', record, 'type'), raw('time', '', record.run_date || '—'));
+      if (status === 'failed' || status === 'partial') metadata.append(label('span', 'badge neutral', status));
       const summary = element('summary', 'fold-summary library-summary', element('div', 'fold-heading', metadata, value('h2', '', record, 'title')), indicator('recordOpen', 'recordClose'));
       const body = element('div', 'analysis-record-body', element('dl', 'library-fields', field(record, 'objective', 'objective', 'library-field-wide'), field(record, 'unit'), field(record, 'variables'), field(record, 'specification', 'specification', 'library-field-wide'), field(record, 'summary', 'summary', 'library-field-wide'), field(record, 'limitations', 'limitations', 'library-field-wide')));
       const report = renderReviewedReport(record.reviewed_report, record.id, dataset.id);

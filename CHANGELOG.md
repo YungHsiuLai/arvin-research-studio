@@ -3,6 +3,12 @@
 Release notes for Arvin Research Studio. This public-safe file is maintained in
 the research source repository and copied to the public website repository.
 
+## 2026-10-26 — Simplify analysis labels and clarify the sample unit
+
+- Removed execution-actor and normal completion badges from analysis cards in both languages. Execution metadata remains recorded; failed/partial records retain their status indicators.
+- Clarified that N=50 counts distinct main agreements, with amendments, restatements and repeated filings counted once per underlying agreement. It is not a count of50 companies; one company can appear in multiple contracts.
+- Updated local/public documentation and interface checks. The50-contract sample and its statistical results are unchanged; research remains paused.
+
 ## 2026-10-26 — Show only the fifty-agreement record
 
 - Consolidated EDGAR Data analysis into one fifty-agreement record. The six earlier cumulative cards are archived internally and excluded from both site builds.
