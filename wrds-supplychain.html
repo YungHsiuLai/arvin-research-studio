@@ -488,8 +488,8 @@ body.is-resizing-column,body.is-resizing-column *{cursor:col-resize!important;us
     resultNotRegistered: ['本次執行尚未登記結果檔。', 'No result file is registered for this run.'],
     recordOpen: ['展開分析', 'Expand analysis'], recordClose: ['收合分析', 'Collapse analysis'],
     reportOpen: ['展開結果表', 'Expand results table'], reportClose: ['收合結果表', 'Collapse results table'],
-    reportEvidence: ['條款來源', 'Source evidence'],
-    reportDocuments: ['查看文件', 'View documents'],
+    reportEvidence: ['文件原文', 'Original document'],
+    reportDocuments: ['查看原文', 'View original'],
     pending: ['尚未整理。', 'Not documented yet.']
   };
   function element(tag, className, ...children) {
@@ -972,7 +972,19 @@ body.is-resizing-column,body.is-resizing-column *{cursor:col-resize!important;us
       table.append(rows);
       const scroll = element('div', 'analysis-report-scroll table-scroll', table);
       scroll.tabIndex = 0; scroll.setAttribute('role', 'region'); scroll.setAttribute('aria-labelledby', title.id);
-      const body = element('div', 'analysis-report-section-body', reportValue('p', 'analysis-report-intro', section, 'intro'), scroll);
+      const body = element('div', 'analysis-report-section-body');
+      if (section.intro_en.trim() || section.intro_zh.trim()) body.append(reportValue('p', 'analysis-report-intro', section, 'intro'));
+      body.append(scroll);
+      if (asArray(section.source_ids).length) {
+        const documents = element('p', 'analysis-report-section-documents', label('span', '', 'reportEvidence'), raw('span', '', ': '));
+        section.source_ids.forEach(sourceId => {
+          const source = sources.get(sourceId); if (!source) return;
+          const link = raw('a', 'analysis-report-source', source.label);
+          link.href = source.url; link.target = '_blank'; link.rel = 'noopener noreferrer'; link.dataset.sourceId = source.id;
+          documents.append(link);
+        });
+        body.prepend(documents);
+      }
       const card = fold(`analysis-report:${datasetId}:${recordId}:${section.id}`, 'analysis-report-section panel', summary, body, index === 0);
       card.dataset.reportSectionId = section.id; container.append(card);
     });

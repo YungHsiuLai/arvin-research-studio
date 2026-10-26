@@ -1,5 +1,8 @@
 # Changelog
 
+- 2026-10-26: Cue–LG 操作示例的原始文件集中至展開後第一行，移除步驟重複來源欄；其他分析表來源欄改為「文件原文／Original document」，保留預設收合與原條款位置。
+- 2026-10-26: 示例標題改為交代 Cue Biopharma、LG Chem 與授權技術的「資料實例」；移除示例前言及指定的樣本提醒句，英文同步。
+
 Release notes for Arvin Research Studio. This public-safe file is maintained in
 the research source repository and copied to the public website repository.
 

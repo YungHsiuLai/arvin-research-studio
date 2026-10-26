@@ -1,5 +1,7 @@
 # Arvin Research Studio
 
+分析表的來源欄使用「文件原文／Original document」，預設收合；Cue–LG操作示例改在展開後第一行提供共用文件，不在五個步驟重複來源欄。條款位置仍在對應說明中。
+
 量化行銷與 B2B 研究的公開資料集目錄。
 
 [開啟 Research Studio](https://yunghsiulai.github.io/arvin-research-studio/)
