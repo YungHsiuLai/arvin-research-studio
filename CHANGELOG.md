@@ -3,6 +3,15 @@
 Release notes for Arvin Research Studio. This public-safe file is maintained in
 the research source repository and copied to the public website repository.
 
+## 2026-10-26 — Fifty reviewed license agreements
+
+- Added eight reviewed main families to the cumulative EDGAR analysis: 50 agreements, 85 bilingual report rows and 51 official sources, including a supporting parent filing. All previous runs and the worked example remain available; batches publish as ready.
+- Preserved the prior 42 records and independently checked nine corrections plus 317 documented coding-format patches. Kept the MI diagnostic and therapeutic families distinct, with their connected licensing chain.
+- Six comparable initial license terms have median 4 years and range 3–20. PCT's ten-year agreement period remains separately recorded because its core rights survive perpetually; its signature/date uncertainty and related-party separation context elsewhere remain explicit.
+- Nineteen agreements support defined work packages or source-reported initiated programs, seven partial positive evidence and twenty-four remain unresolved. Complete project duration and total headcount remain unavailable. Updated both dashboard versions and maintenance documentation.
+
+- Capped this release at50 in the existing review order at the user’s request. Further reading and collection are paused pending their post-meeting decision; additional unpublished preparation is preserved locally.
+
 ## 2026-10-26 — Capacity for growing reviewed analyses
 
 - Increased reviewed-report capacity to 1,000 sources and 1,000 rows per section, supporting the 450-agreement target plus supplementary evidence. Oversized metadata is rejected rather than truncated; section/column limits and all privacy/reference checks remain.
