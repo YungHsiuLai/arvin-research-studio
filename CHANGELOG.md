@@ -3,6 +3,10 @@
 Release notes for Arvin Research Studio. This public-safe file is maintained in
 the research source repository and copied to the public website repository.
 
+## 2026-10-26 — Shorter Studio home
+
+- Removed the introductory paragraph from Studio home in both languages. Kept the title, short tagline, catalogue counts and two topic entrances; updated local and public maintenance guidance.
+
 ## 2026-10-26 — Studio home, B2B categories and SEC contract examples
 
 - Applied the same five categories to RoyaltyStat, FactSet Revere, InfraClear and Supply Chain, with bilingual field-level reasons and complete, nonoverlapping coverage.
