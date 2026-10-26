@@ -3,6 +3,12 @@
 Release notes for Arvin Research Studio. This public-safe file is maintained in
 the research source repository and copied to the public website repository.
 
+## 2026-10-26 — Reproducible contract collection and review
+
+- Added explicit, paced SEC archive collection with response hashes, resumable caches, exact official exhibit-type checks and saved failure states. Search and download hits remain candidates.
+- Added offline exact/near-text duplicate hints and review-format normalization. Preserve original coding, conflicting variants, partial evidence and missingness; require separate agreement-family and coding decisions before analysis.
+- Documented the acquisition and review stages and added offline regression checks. The published two-agreement pilot remains the current completed analysis while the larger sample is reviewed.
+
 ## 2026-10-26 — First technology-license analysis
 
 - Added an EDGAR descriptive pilot covering two distinct technology-license agreements, with six license features, four project features and a five-step Cue–LG worked example. The target remains 450 agreements; collection and coding are ongoing.
