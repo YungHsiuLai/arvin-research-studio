@@ -3,6 +3,13 @@
 Release notes for Arvin Research Studio. This public-safe file is maintained in
 the research source repository and copied to the public website repository.
 
+## 2026-10-26 — Forty-two reviewed license agreements
+
+- Expanded cumulative EDGAR analysis to 42 reviewed main families, with 77 bilingual report rows and 42 official sources. Previous runs and the worked example remain available; 408 agreements remain toward the 450 target.
+- Preserved the previous 33 records. Explicitly reviewed twelve corrections, distinguishing nonexclusive collaboration from license exclusivity, superseded grants from the reviewed version, and reserved third-party rights from actual grants.
+- Eighteen agreements support defined work packages or source-reported initiated programs, three have partial positive evidence and twenty-one remain unresolved. Five comparable fixed initial license terms are unchanged; complete project duration and total headcount remain unavailable.
+- Added an overlapping food-technology category and kept source-reported program initiation separate from independent evidence of performance. Updated both dashboard versions and maintenance documentation.
+
 ## 2026-10-26 — Thirty-three reviewed license agreements
 
 - Expanded the cumulative EDGAR analysis to 33 reviewed main families, with 67 bilingual report rows and 33 official sources. Previous runs and the worked example remain available; the 450 target continues.
