@@ -3,6 +3,14 @@
 Release notes for Arvin Research Studio. This public-safe file is maintained in
 the research source repository and copied to the public website repository.
 
+## 2026-10-26 — Nine-agreement analysis and measurement states
+
+- Added a cumulative nine-agreement EDGAR analysis after independent checks of seven new main agreements. Preserved the two-case pilot and Cue–LG walkthrough; the 450-agreement target remains in progress. The new 36-row report shows scoped licensing counts, project evidence, information states, technology areas and official source links.
+- Hide an entirely empty source column in aggregate report sections; keep evidence links in source-linked sections and retain mobile scrolling.
+- Clarified that an executed substantive main license can have unverified activation conditions. Preserve conditional grants separately from known operative rights; options and unsigned forms do not automatically qualify.
+- Added distinct partial-project and co-exclusive categories, overlapping technology domains and agreement-family duplicate checks to offline analysis.
+- Require explicit quantity units and planned/observed scope; keep partial horizons, milestones and staffing subsets out of complete duration/headcount summaries. Preserve earlier inputs and results.
+
 ## 2026-10-26 — Reproducible contract collection and review
 
 - Added explicit, paced SEC archive collection with response hashes, resumable caches, exact official exhibit-type checks and saved failure states. Search and download hits remain candidates.

@@ -920,12 +920,15 @@ body.is-resizing-column,body.is-resizing-column *{cursor:col-resize!important;us
     container.dataset.analysisReportId = recordId;
     const sources = new Map(asArray(report.sources).map(source => [source.id, source]));
     report.sections.forEach((section, index) => {
+      const hasEvidence = section.rows.some(row => row.source_ids.length > 0);
       const title = reportValue('h3', '', section, 'title'); title.id = `analysis-report-heading-${++sequence}`;
       const summary = element('summary', 'fold-summary analysis-report-summary', element('div', 'fold-heading', title), indicator('reportOpen', 'reportClose'));
       const header = element('tr', '', section.columns.map(column => {
         const cell = reportValue('th', '', column, 'label'); cell.scope = 'col'; return cell;
       }));
-      const evidenceHeader = label('th', 'analysis-report-evidence-heading', 'reportEvidence'); evidenceHeader.scope = 'col'; header.append(evidenceHeader);
+      if (hasEvidence) {
+        const evidenceHeader = label('th', 'analysis-report-evidence-heading', 'reportEvidence'); evidenceHeader.scope = 'col'; header.append(evidenceHeader);
+      }
       const table = element('table', 'analysis-report-table', element('thead', '', header));
       table.setAttribute('aria-labelledby', title.id);
       const rows = element('tbody', '');
@@ -935,15 +938,18 @@ body.is-resizing-column,body.is-resizing-column *{cursor:col-resize!important;us
           const td = reportValue(columnIndex ? 'td' : 'th', 'analysis-report-cell', cell, 'text');
           if (!columnIndex) td.scope = 'row'; tr.append(td);
         });
-        const evidence = element('td', 'analysis-report-evidence');
-        row.source_ids.forEach(sourceId => {
-          const source = sources.get(sourceId); if (!source) return;
-          const link = raw('a', 'analysis-report-source', source.label);
-          link.href = source.url; link.target = '_blank'; link.rel = 'noopener noreferrer'; link.dataset.sourceId = source.id;
-          evidence.append(link);
-        });
-        if (!evidence.childNodes.length) evidence.append(raw('span', '', '—'));
-        tr.append(evidence); rows.append(tr);
+        if (hasEvidence) {
+          const evidence = element('td', 'analysis-report-evidence');
+          row.source_ids.forEach(sourceId => {
+            const source = sources.get(sourceId); if (!source) return;
+            const link = raw('a', 'analysis-report-source', source.label);
+            link.href = source.url; link.target = '_blank'; link.rel = 'noopener noreferrer'; link.dataset.sourceId = source.id;
+            evidence.append(link);
+          });
+          if (!evidence.childNodes.length) evidence.append(raw('span', '', '—'));
+          tr.append(evidence);
+        }
+        rows.append(tr);
       });
       table.append(rows);
       const scroll = element('div', 'analysis-report-scroll table-scroll', table);
