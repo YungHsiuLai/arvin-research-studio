@@ -3,6 +3,12 @@
 Release notes for Arvin Research Studio. This public-safe file is maintained in
 the research source repository and copied to the public website repository.
 
+## 2026-10-26 — Show only the fifty-agreement record
+
+- Consolidated EDGAR Data analysis into one fifty-agreement record. The six earlier cumulative cards are archived internally and excluded from both site builds.
+- Integrated the existing Cue–LG five-step worked example into the current record, preserving its content and original SEC source. The report now has90 rows; sample membership and statistics are unchanged.
+- Updated navigation checks and maintenance guidance. Research remains paused; this release adds no new contract reading or coding.
+
 ## 2026-10-26 — Fifty reviewed license agreements
 
 - Added eight reviewed main families to the cumulative EDGAR analysis: 50 agreements, 85 bilingual report rows and 51 official sources, including a supporting parent filing. All previous runs and the worked example remain available; batches publish as ready.
