@@ -3,6 +3,30 @@
 Release notes for Arvin Research Studio. This public-safe file is maintained in
 the research source repository and copied to the public website repository.
 
+## 2026-10-26 — EDGAR documents and financial-data mapping
+
+- Added SEC EDGAR as a separate dataset, with an EX-11 section and three verified historical earnings-per-share exhibits. Its eleven dictionary fields describe a document manifest, not extracted financial observations.
+- Added reproducible R edgar collection and offline registration with source-document type, accession, byte-length and SHA-256 checks. Public pages expose reviewed document metadata and official links; downloads and request logs remain local.
+- Added fifteen bilingual form-use categories, a searchable official submission-type registry, current and historical exhibit meanings, and scoped file-size evidence. The registry includes nonpublic and historical labels; it is not a count of public datasets. Whole-archive and per-category sizes remain unmeasured.
+- Distinguished historical EX-11 earnings-per-share exhibits from EX-10 material contracts, and bulk filing-history / XBRL ZIP sizes from full filing documents.
+- Expanded RoyaltyStat's identifier notes with documented financial-data mapping routes and their limits, without claiming that a crosswalk was executed.
+- Updated both versions, maintenance instructions and verification for six datasets.
+
+## 2026-10-26 — RoyaltyStat field categories
+
+- Added identifiers, transaction attributes, governance and performance as logical field categories within the RoyaltyStat dictionary, with bilingual descriptions and a rationale for each field.
+- Grounded the distinction in Mooi and Ghosh's 2010 Journal of Marketing article, read through the user's Zotero API. The article provides a conceptual reference; it did not use RoyaltyStat.
+- Retained an explicitly empty performance category because contractual royalty rates and payment terms do not measure realized performance or the article's contracting-cost outcomes.
+- Kept the original SQL table, field definitions and examples intact. Category selection filters the existing dictionary and export instead of inventing new database tables.
+- Renamed the second definition bullet to AI verification / AI查核 while preserving the original source definition and unresolved measurement limits.
+
+## 2026-10-26 — Field examples and plain-language datatype help
+
+- Replaced the public dictionary's local-only messages with reviewed examples for every registered field. Personal identifiers and identifying text are anonymized, and transformed values or short excerpts are explicitly labeled.
+- Kept reviewed field examples separate from coherent sample rows, query records and private analysis results. Public builds read only the curated example registry.
+- Added a short bilingual explanation and concrete example in parentheses at the first visible occurrence of each SQL datatype family in a dataset. Explanations update after filtering, table selection, collapsing and language changes; original SQL type labels and CSV exports stay unchanged.
+- Updated both local and public versions, maintenance instructions and validation.
+
 ## 2026-10-25 — Live measurement checks and selectable method formulas
 
 - Rechecked the registered WRDS tables with read-only schema and aggregate queries. Updated preview SQL types, category descriptions, Supply Chain currency/source links and its historical table's observed subset relationship.
