@@ -3,6 +3,12 @@
 Release notes for Arvin Research Studio. This public-safe file is maintained in
 the research source repository and copied to the public website repository.
 
+## 2026-10-26 — Sample-count bullets and collapsible source documents
+
+- Added bilingual sample bullets:50 main agreements,73 named contracting-company identities,17 other organizational roles,3 individual licensors,39 SEC filers by CIK and51 source documents. Definitions distinguish aliases, affiliates, named roles and independent legal entities.
+- Added corresponding source documents to every report row, including aggregate rows. Source labels include actual filenames and SEC links; each list starts collapsed and expands on request.
+- Added an offline, decision-bound party-count audit and regression coverage. The50-agreement sample and existing contract statistics are unchanged; research remains paused.
+
 ## 2026-10-26 — Simplify analysis labels and clarify the sample unit
 
 - Removed execution-actor and normal completion badges from analysis cards in both languages. Execution metadata remains recorded; failed/partial records retain their status indicators.

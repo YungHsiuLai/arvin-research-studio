@@ -181,6 +181,7 @@
 
 .method-scenario{padding:15px 17px;background:#f3f7ee;border-left:3px solid #9db58d;border-radius:0 7px 7px 0}.method-scenario dt{font-size:12px}.method-scenario dd{color:#49674f;font-size:13px}.research-math{position:relative;display:inline-block;max-width:100%;vertical-align:middle;user-select:text;-webkit-user-select:text;cursor:text}.research-math-scroll{display:inline-block;max-width:100%;overflow-x:auto;overflow-y:hidden;vertical-align:middle;user-select:text;-webkit-user-select:text}.research-math math,.research-math math *{user-select:text;-webkit-user-select:text}.research-math-scroll>math{max-width:none;white-space:nowrap;font-size:1.08em}.research-math-block{display:block;margin:13px 0}.research-math-block>.research-math-scroll{display:block}.handout-content .research-math-block math{margin:0;padding:2px}.math-copy-button{position:fixed;z-index:220;left:0;top:0;visibility:visible;opacity:0;pointer-events:none;background:#fff;border:1px solid #a9bca4;border-radius:5px;box-shadow:0 3px 12px #25452b26;color:#365f43;padding:4px 8px;font:500 11px/1.5 system-ui,sans-serif;max-width:calc(100vw - 12px);white-space:nowrap;user-select:none;-webkit-user-select:none;cursor:pointer}.math-copy-button.math-copy-visible{visibility:visible;opacity:1;pointer-events:auto}.math-copy-button:focus-visible{outline:2px solid #5c896c;outline-offset:2px}.math-clipboard-fallback{position:fixed;left:-9999px;top:0;width:1px;height:1px;opacity:0}.research-math .math-copy-status{user-select:none;-webkit-user-select:none}
 .design-reference{margin-top:24px;padding-top:14px;border-top:1px solid #dce5d7;font-size:12px;line-height:1.8;color:#667d6c}.design-reference h4{margin:0 0 5px;font-size:12px}.design-reference-text{margin:0;overflow-wrap:anywhere;user-select:text}.design-reference-link{overflow-wrap:anywhere}
+.analysis-unit-points{margin:0;padding-left:20px}.analysis-unit-points li{padding-left:2px;margin:4px 0;line-height:1.8}.analysis-report-source-toggle{cursor:pointer;color:#36786f;font-size:11px;line-height:1.7;overflow-wrap:anywhere}.analysis-report-source-toggle:focus-visible{outline:2px solid #55a69b;outline-offset:3px}.analysis-report-source-list{padding-top:9px}.analysis-report-source-details[open]>.analysis-report-source-toggle{margin-bottom:3px}
 /* Keep reviewed tables usable while the mobile sidebar pushes the content. */
 @media(max-width:700px){.sidebar-autohide:not(.sidebar-collapsed) #main:has(.analysis-reviewed-report){padding-left:6px;padding-right:6px}.sidebar-autohide:not(.sidebar-collapsed) .analysis-record:has(.analysis-reviewed-report)>.analysis-record-body{padding:6px}.sidebar-autohide:not(.sidebar-collapsed) .analysis-report-section-body{padding:4px}.sidebar-autohide:not(.sidebar-collapsed) .analysis-report-scroll{scrollbar-gutter:auto}.sidebar-autohide:not(.sidebar-collapsed) .analysis-report-summary{padding:8px}.sidebar-autohide:not(.sidebar-collapsed) .analysis-record:has(.analysis-reviewed-report)>.library-summary{padding:8px}}
 
@@ -488,6 +489,7 @@ body.is-resizing-column,body.is-resizing-column *{cursor:col-resize!important;us
     recordOpen: ['展開分析', 'Expand analysis'], recordClose: ['收合分析', 'Collapse analysis'],
     reportOpen: ['展開結果表', 'Expand results table'], reportClose: ['收合結果表', 'Collapse results table'],
     reportEvidence: ['條款來源', 'Source evidence'],
+    reportDocuments: ['查看文件', 'View documents'],
     pending: ['尚未整理。', 'Not documented yet.']
   };
   function element(tag, className, ...children) {
@@ -619,6 +621,16 @@ body.is-resizing-column,body.is-resizing-column *{cursor:col-resize!important;us
     return node;
   }
   function field(record, key, labelKey = key, className = '') {
+    const en = String(record?.[key + '_en'] ?? '').split('\n');
+    const zh = String(record?.[key + '_zh'] ?? '').split('\n');
+    if (key === 'unit' && en.length > 1 && en.length === zh.length && en.every(Boolean) && zh.every(Boolean)) {
+      const list = element('ul', 'analysis-unit-points');
+      en.forEach((line, index) => {
+        if (index) list.append(document.createTextNode('\n'));
+        list.append(bilingual('li', '', zh[index], line));
+      });
+      return element('div', `library-field ${className}`, label('dt', '', labelKey), element('dd', '', list));
+    }
     return element('div', `library-field ${className}`, label('dt', '', labelKey), value('dd', '', record, key));
   }
   function reveal(node) {
@@ -940,13 +952,19 @@ body.is-resizing-column,body.is-resizing-column *{cursor:col-resize!important;us
         });
         if (hasEvidence) {
           const evidence = element('td', 'analysis-report-evidence');
+          const links = element('div', 'analysis-report-source-list');
           row.source_ids.forEach(sourceId => {
             const source = sources.get(sourceId); if (!source) return;
             const link = raw('a', 'analysis-report-source', source.label);
             link.href = source.url; link.target = '_blank'; link.rel = 'noopener noreferrer'; link.dataset.sourceId = source.id;
-            evidence.append(link);
+            links.append(link);
           });
-          if (!evidence.childNodes.length) evidence.append(raw('span', '', '—'));
+          if (links.childNodes.length) {
+            const summary = element('summary', 'analysis-report-source-toggle', label('span', '', 'reportDocuments'), raw('span', '', ` (${links.childNodes.length})`));
+            const details = element('details', 'analysis-report-source-details', summary, links);
+            details.addEventListener('toggle', () => { if (details.isConnected) announceLayout(); }, { signal: activeView.controller.signal });
+            evidence.append(details);
+          } else evidence.append(raw('span', '', '—'));
           tr.append(evidence);
         }
         rows.append(tr);
@@ -971,7 +989,7 @@ body.is-resizing-column,body.is-resizing-column *{cursor:col-resize!important;us
       const metadata = element('div', 'analysis-record-meta', value('span', 'library-category-badge', record, 'type'), raw('time', '', record.run_date || '—'));
       if (status === 'failed' || status === 'partial') metadata.append(label('span', 'badge neutral', status));
       const summary = element('summary', 'fold-summary library-summary', element('div', 'fold-heading', metadata, value('h2', '', record, 'title')), indicator('recordOpen', 'recordClose'));
-      const body = element('div', 'analysis-record-body', element('dl', 'library-fields', field(record, 'objective', 'objective', 'library-field-wide'), field(record, 'unit'), field(record, 'variables'), field(record, 'specification', 'specification', 'library-field-wide'), field(record, 'summary', 'summary', 'library-field-wide'), field(record, 'limitations', 'limitations', 'library-field-wide')));
+      const body = element('div', 'analysis-record-body', element('dl', 'library-fields', field(record, 'objective', 'objective', 'library-field-wide'), field(record, 'unit', 'unit', 'library-field-wide'), field(record, 'variables'), field(record, 'specification', 'specification', 'library-field-wide'), field(record, 'summary', 'summary', 'library-field-wide'), field(record, 'limitations', 'limitations', 'library-field-wide')));
       const report = renderReviewedReport(record.reviewed_report, record.id, dataset.id);
       if (report) body.append(report);
       if (!isPublic) {
