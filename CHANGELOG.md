@@ -3,6 +3,23 @@
 Release notes for Arvin Research Studio. This public-safe file is maintained in
 the research source repository and copied to the public website repository.
 
+## 2026-10-26 — Direct section navigation and complete field categories
+
+- Added persistent links for switching between available workspace sections without opening the sidebar, with an active-page indicator and mobile horizontal scrolling. Global pages retain only the two global destinations; private sections remain local.
+- Added Other to RoyaltyStat's field categories for time/source metadata and unresolved fields. The five groups contain 13 identifiers, 7 transaction attributes, 11 governance fields, 0 direct performance measures and 5 other fields, totaling all 36 columns exactly once.
+- Kept original definitions, examples and financial-linkage notes; retained the unresolved DOI-number namespace instead of assuming a verified document identifier.
+- Simplified dictionary counts to fields only and removed the table-index count badge, retaining category counts for comparison with All fields.
+- Updated both versions, classification validation, navigation checks and maintenance guidance.
+
+## 2026-10-26 — Explicit search scopes
+
+- Limited EDGAR submission-type search to official type codes, with literal token boundaries so 8-K does not also match 18-K. Added result counts and a clear empty state.
+- Audited all four dashboard search controls. Replaced whole-object method searching with an explicit list of displayed method and study-implementation fields; excluded internal IDs, metadata keys, paths and unrelated source text.
+- Made dictionary and literature search scopes explicit and bilingual matching independent of the selected presentation language. Preserved literal punctuation and stopped phrases matching across unrelated fields.
+- Aligned dictionary result counts, accessibility announcements and CSV exports with the selected table and current filters. Kept schema, field-category, journal and method-category filters combined with text search.
+- Made local CSV variable-use annotations follow the chosen language and included the previously omitted control-variable reason; source definitions and identifiers remain unchanged.
+- Updated both versions, documented search semantics and added scope, negative-match, language and export regression checks.
+
 ## 2026-10-26 — Simpler example labels
 
 - Show actual field examples directly without repetitive observed-value labels in either language. Keep explicit labels and explanations for fictional or modified examples; retain ellipses for excerpts.
