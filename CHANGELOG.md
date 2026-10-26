@@ -3,6 +3,13 @@
 Release notes for Arvin Research Studio. This public-safe file is maintained in
 the research source repository and copied to the public website repository.
 
+## 2026-10-26 — Twenty-five reviewed license agreements
+
+- Expanded the cumulative EDGAR analysis from 17 to 25 reviewed main-agreement families, with 58 report rows and 25 official sources. Earlier runs and the Cue–LG walkthrough are preserved; the 450 target continues.
+- Incorporated independent checks of 80 new feature decisions, including 26 corrections/completions. Distinguished exclusive fabrication from IP exclusivity, research grants from commercial options, and limited joinders from equal collaboration roles.
+- Five disclosed fixed initial license terms range from 3 to 20 years (median 3). Missing plans, activation conditions and company-type uncertainty remain explicit; no complete project duration or total headcount is inferred.
+- Updated local/public summaries and maintenance documentation. Raw source texts and full coding remain outside the public artifact.
+
 ## 2026-10-26 — Seventeen reviewed license agreements
 
 - Added eight independently checked main-agreement families to the cumulative EDGAR analysis (N=17), preserving the nine-agreement and two-case runs. The 450-agreement target continues; overlapping runs are not additive.
