@@ -3,6 +3,11 @@
 Release notes for Arvin Research Studio. This public-safe file is maintained in
 the research source repository and copied to the public website repository.
 
+## 2026-10-26 — Simpler example labels
+
+- Show actual field examples directly without repetitive observed-value labels in either language. Keep explicit labels and explanations for fictional or modified examples; retain ellipses for excerpts.
+- Preserve example values and provenance metadata, and apply the presentation change to both local and public versions.
+
 ## 2026-10-26 — EDGAR documents and financial-data mapping
 
 - Added SEC EDGAR as a separate dataset, with an EX-11 section and three verified historical earnings-per-share exhibits. Its eleven dictionary fields describe a document manifest, not extracted financial observations.
