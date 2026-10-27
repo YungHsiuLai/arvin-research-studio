@@ -1,5 +1,7 @@
 # Changelog
 
+- 2026-10-27: Maintain private workspace utilities and offline validation; published research summaries are unchanged.
+
 - 2026-10-27: Add the reviewed eGene-SciBridge source-code license as the 76th main agreement, preserving separate component grants and perpetual terms.
 
 - 2026-10-27: Expand the reviewed EDGAR analysis to 75 main agreements, adding cooler and speaker technology licenses with source-linked terms and separate payment conditions.
