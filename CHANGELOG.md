@@ -1,5 +1,7 @@
 # Changelog
 
+- 2026-10-27: Technology-license analysis now covers 71 main agreements. Added microRNA and antibody collaborations with linked amendments, separating current licenses, approval-dependent rights, research stages and complete project quantities.
+
 - 2026-10-27: Reviewed embedded images in nine existing EDGAR agreements. Corrected Yale–Rib-X’s available development plan and clarified Penn’s blank royalty form and ESPRE’s product diagram. The sample remains 68 main agreements; prior versions are retained.
 
 - 2026-10-27: 技術授權分析增至68份主約，新增ADC、microRNA合作及客服軟體案例。說明全球授權與實際服務地區的差別，分開研究權、商業選擇權及交付後才開始的權利；同約重訂及修訂來源可逐列查看。
