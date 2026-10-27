@@ -1,5 +1,7 @@
 # Changelog
 
+- 2026-10-28: Maintain private offline reporting and bounded workflow checks; published research summaries are unchanged.
+
 - 2026-10-28: Improve private workspace compatibility and preservation checks; published research summaries are unchanged.
 
 - 2026-10-27: Maintain private workspace utilities and offline validation; published research summaries are unchanged.
