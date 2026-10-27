@@ -1,5 +1,7 @@
 # Changelog
 
+- 2026-10-27: Expand the reviewed EDGAR analysis to 75 main agreements, adding cooler and speaker technology licenses with source-linked terms and separate payment conditions.
+
 - 2026-10-27: Technology-license analysis now covers 73 main agreements, adding semiconductor and turbine-driven equipment licenses. Separate perpetual rights from time-limited exclusivity, retain conditional grants, and keep repeated filings and unsigned or incomplete candidates outside the main-agreement count.
 
 - 2026-10-27: Technology-license analysis now covers 71 main agreements. Added microRNA and antibody collaborations with linked amendments, separating current licenses, approval-dependent rights, research stages and complete project quantities.
