@@ -1,5 +1,7 @@
 # Changelog
 
+- 2026-10-27: Technology-license analysis now covers 73 main agreements, adding semiconductor and turbine-driven equipment licenses. Separate perpetual rights from time-limited exclusivity, retain conditional grants, and keep repeated filings and unsigned or incomplete candidates outside the main-agreement count.
+
 - 2026-10-27: Technology-license analysis now covers 71 main agreements. Added microRNA and antibody collaborations with linked amendments, separating current licenses, approval-dependent rights, research stages and complete project quantities.
 
 - 2026-10-27: Reviewed embedded images in nine existing EDGAR agreements. Corrected Yale–Rib-X’s available development plan and clarified Penn’s blank royalty form and ESPRE’s product diagram. The sample remains 68 main agreements; prior versions are retained.
