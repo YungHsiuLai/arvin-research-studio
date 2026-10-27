@@ -1,5 +1,7 @@
 # Changelog
 
+- 2026-10-28: Improve private workspace compatibility and preservation checks; published research summaries are unchanged.
+
 - 2026-10-27: Maintain private workspace utilities and offline validation; published research summaries are unchanged.
 
 - 2026-10-27: Add the reviewed eGene-SciBridge source-code license as the 76th main agreement, preserving separate component grants and perpetual terms.
