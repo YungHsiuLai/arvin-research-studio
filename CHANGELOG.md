@@ -1,5 +1,7 @@
 # Changelog
 
+- 2026-10-27: Reviewed embedded images in nine existing EDGAR agreements. Corrected Yale–Rib-X’s available development plan and clarified Penn’s blank royalty form and ESPRE’s product diagram. The sample remains 68 main agreements; prior versions are retained.
+
 - 2026-10-27: 技術授權分析增至68份主約，新增ADC、microRNA合作及客服軟體案例。說明全球授權與實際服務地區的差別，分開研究權、商業選擇權及交付後才開始的權利；同約重訂及修訂來源可逐列查看。
 
 - 2026-10-27: 技術授權分析增至64份主約，新增神經電刺激裝置專利及電信計費軟體案例。保留前後受讓公司、修訂日期矛盾與未公開期間；擔保債權用途的專利文件另存，不混入這次樣本。
