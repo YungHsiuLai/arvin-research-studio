@@ -1,5 +1,7 @@
 # Changelog
 
+- 2026-10-28: Rewrite the private handout's method pipeline in plain language with explicit inputs and outputs for every step, and add a private checklist of past handout mistakes; published research summaries are unchanged.
+
 - 2026-10-28: Extend publication checks to the explicitly approved additional dataset page; keep unknown files blocked.
 
 - 2026-10-28: Add RoyaltyStat · Technology Licensing as a separate historical research dataset, with 808 fields, reviewed examples, five field categories and linked company financials. Retain the existing WRDS Preview and explain Stata storage types in both languages.
