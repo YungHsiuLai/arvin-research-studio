@@ -1,5 +1,7 @@
 # Changelog
 
+- 2026-10-28: Clarify private identifier-format checks; published dataset content is unchanged.
+
 - 2026-10-28: Preserve private offline data-comparison evidence and clarify source-version guidance; published dataset content is unchanged.
 
 - 2026-10-28: Correct and complete the method pipeline of the private handout after an independent review; published research summaries are unchanged.
