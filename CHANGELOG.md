@@ -1,5 +1,9 @@
 # Changelog
 
+- 2026-10-28: Revise the second private methods handout after an independent review, with the article's equations and notation, numbered pipeline inputs and outputs, and matching updates to its method design page, which now shows numbered inputs and outputs and one column per pipeline step.
+
+- 2026-10-28: Present the 808 wide-table licensing fields as 49 expandable items, with explicit party, time and calculation choices. Load member rows on demand, paginate individual columns, and preserve complete search results and CSV exports.
+
 - 2026-10-28: Add a section listing every equation of the article, with its original symbols and definitions, before the private handout's method pipeline; published research summaries are unchanged.
 
 - 2026-10-28: Number the inputs and outputs in the private handout's method pipeline and give each one's symbol, definition, value type and example; published research summaries are unchanged.
