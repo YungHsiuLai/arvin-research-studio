@@ -1,5 +1,7 @@
 # Changelog
 
+- 2026-10-28: Number the inputs and outputs in the private handout's method pipeline and give each one's symbol, definition, value type and example; published research summaries are unchanged.
+
 - 2026-10-28: Rewrite the private handout's method pipeline in plain language with explicit inputs and outputs for every step, and add a private checklist of past handout mistakes; published research summaries are unchanged.
 
 - 2026-10-28: Extend publication checks to the explicitly approved additional dataset page; keep unknown files blocked.

@@ -143,6 +143,23 @@
 @media(max-width:1200px){.topbar-controls{padding-inline:26px}.section-navigation{padding-inline:26px}}
 @media(max-width:980px){.topbar-controls{gap:10px}}
 @media(max-width:700px){.topbar-controls{min-height:49px;padding:0 10px 0 12px;gap:8px}.topbar.has-dataset-switcher .topbar-controls{flex-wrap:wrap;padding-top:8px;padding-bottom:8px}.sidebar-autohide:not(.sidebar-collapsed) .topbar-controls{padding-left:6px;padding-right:6px;gap:5px}.section-navigation{padding:4px 12px 6px;gap:4px}.section-link{min-height:44px;padding:8px 10px;font-size:11px}.sidebar-autohide:not(.sidebar-collapsed) .section-navigation{padding-inline:6px}.section-link.dataset-section-start{margin-left:11px}}
+/* Explicit wide-table items. Closed cards contain no hidden dictionary rows. */
+.family-view-controls{display:flex;align-items:end;gap:16px;flex-wrap:wrap;margin-bottom:18px}
+.family-view-controls>.select-field{min-width:210px;max-width:100%}
+.family-view-help{flex:1;min-width:180px;font-size:.82rem;margin:0 0 5px}
+.family-pagination{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.field-family{margin-bottom:12px}
+.field-family>.table-card-heading{padding:18px 22px}
+.field-family .fold-heading h2{font-size:1rem;margin:0 0 4px}
+.family-source{font-size:.76rem;color:var(--muted)}
+.family-body{padding-top:18px}
+.family-selectors{display:flex;gap:14px;flex-wrap:wrap;padding:0 22px 12px}
+.family-selector{min-width:145px;max-width:100%;flex:0 1 250px}
+.family-active-field,.family-lineage,.family-default-note,.family-filter-help{margin:0 22px 12px;font-size:.84rem}
+.family-lineage{line-height:1.65}
+.family-default-note,.family-filter-help{font-size:.76rem}
+.family-member .sample-panel{margin-bottom:0}
+@media(max-width:600px){.family-selectors{padding:0 14px 12px}.family-selector{min-width:0;flex:1 1 100%}.family-view-controls>.select-field{min-width:0;width:100%}.family-body .family-active-field,.family-body .family-lineage,.family-default-note,.family-filter-help{margin-left:14px;margin-right:14px}.family-active-field code{overflow-wrap:anywhere}}
 
 .library-page-heading{margin-bottom:17px}.library-section-links{display:flex;gap:9px;flex-wrap:wrap;margin-bottom:28px}.library-section-title{font-size:18px;margin:0 0 15px}.method-catalogue,.research-designs,.library-method-card,.library-design-card,.pipeline-node{scroll-margin-top:100px}.research-designs{margin-top:35px}.library-toolbar{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-bottom:18px}.library-toolbar>label:first-child{flex:1;min-width:230px}.library-toolbar>label:nth-child(2){flex:0 1 280px}.library-search,.library-category{width:100%;border:1px solid #d8e1d9;border-radius:7px;background:#fff;padding:10px 12px;color:#456051;font:inherit;font-size:12px;min-height:41px}.library-result-count{font-size:11px;color:#7a8d7d;white-space:nowrap}.method-catalogue-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.library-method-card,.library-design-card,.analysis-record{border:1px solid #d8e3da;border-radius:11px;background:#fff;min-width:0;overflow:hidden}.library-method-card[open]{grid-column:1/-1}.library-method-card[hidden],.library-empty[hidden]{display:none!important}.library-summary{padding:19px 21px;gap:16px}.library-summary h3,.library-summary h2{font-size:18px;line-height:1.45;margin-top:7px}.library-category-badge{font-size:10px;line-height:1.6;color:#64816c;display:inline-block}.library-purpose{font-size:12px;line-height:1.75;color:#728477;margin-top:9px;max-width:90ch}.library-summary .fold-indicator{font-size:9px}.library-method-body,.library-design-body,.analysis-record-body{border-top:1px solid #e5ece4;padding:22px}.library-fields{margin:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px 25px}.library-field{min-width:0}.library-field-wide{grid-column:1/-1}.library-field dt{font-size:10px;font-weight:600;color:#52735d;margin-bottom:6px}.library-field dd{margin:0;color:#62776a;font-size:12px;line-height:1.85;white-space:pre-line;overflow-wrap:anywhere}.method-variants{margin-top:24px;padding-top:20px;border-top:1px solid #e6ece4}.method-variants>h4{font-size:12px;color:#3b6049;margin-bottom:12px}.method-variant{background:#f8faf6;border:1px solid #e0e8dc;border-radius:8px;margin-top:10px;overflow:hidden}.variant-summary{padding:14px 16px;font-size:12px;color:#486b52;line-height:1.7}.method-variant-body{padding:0 17px 18px}.method-variant-body>.button{margin-top:17px}.library-design-card+.library-design-card,.analysis-record+.analysis-record{margin-top:18px}.library-empty{margin:16px 0;padding:24px;border:1px dashed #cfdccd;border-radius:8px;background:#fafcf7;color:#778c79;font-size:13px;line-height:1.8}.research-pipeline{margin:24px 0 0;padding:20px;background:#f4f8f2;border:1px solid #dde7d7;border-radius:10px;min-width:0}.pipeline-caption{font-size:14px;font-weight:600;color:#355f44;margin-bottom:17px}.pipeline-map{display:grid;grid-template-columns:minmax(0,1fr) 24px minmax(0,1fr) 24px minmax(0,1fr);gap:8px;align-items:start}.pipeline-map-simple{grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}.pipeline-stage,.pipeline-branches{min-width:0}.pipeline-stage-heading{font-size:11px;line-height:1.6;font-weight:600;color:#547962;padding:9px 11px;border-bottom:2px solid #8faf97;margin-bottom:11px;background:#e9f1e5;border-radius:5px 5px 0 0}.pipeline-stage-bridge .pipeline-stage-heading{color:#6f7147;border-color:#bdc38f;background:#f0f1de}.pipeline-stage-demand .pipeline-stage-heading{color:#42677b;border-color:#8fafbd;background:#e6eff3}.pipeline-stage-supply .pipeline-stage-heading{color:#755c76;border-color:#b79bb5;background:#f0e9ef}.pipeline-branches{display:grid;gap:18px}.pipeline-stage-arrow{font-size:25px;line-height:1;color:#7c9a80;text-align:center;padding-top:12px}.pipeline-node{padding:13px 12px;background:#fff;border:1px solid #dde6d9;border-radius:7px;min-width:0}.pipeline-node+.pipeline-node{margin-top:11px}.pipeline-node h4{font-size:12px;line-height:1.65;color:#375f43;overflow-wrap:anywhere;margin-bottom:11px}.pipeline-node:focus{outline:3px solid #7faf92;outline-offset:2px}.pipeline-io{display:grid;gap:9px;margin:0}.pipeline-io .library-field dt{font-size:9px;margin-bottom:3px}.pipeline-io .library-field dd{font-size:10px;line-height:1.75}.pipeline-small-label{display:block;font-size:9px;font-weight:600;color:#7a8f7b;margin-bottom:5px}.pipeline-methods,.pipeline-connections{margin-top:12px}.method-reference{display:inline-block;max-width:100%;padding:4px 6px;margin:2px 3px 2px 0;border:1px solid #dbe6d8;border-radius:4px;background:#f1f7ef;color:#52735a;font-size:9px;line-height:1.6;text-align:left;white-space:normal;overflow-wrap:anywhere}.method-reference:hover{background:#e6f0e3}.pipeline-edge{display:flex;align-items:flex-start;gap:5px;width:100%;border:0;background:transparent;padding:4px 0;text-align:left;color:#557c66;font-size:9px;line-height:1.65;overflow-wrap:anywhere}.pipeline-edge:hover{text-decoration:underline}.pipeline-edge-arrow{font-size:14px;flex-shrink:0;line-height:1.2}.pipeline-note{margin-top:16px;font-size:11px;line-height:1.8;color:#718773;overflow-wrap:anywhere}.library-handout{margin-top:24px;border:1px solid #d6e1d3;border-radius:9px;overflow:hidden;background:#fff}.handout-summary{padding:18px 20px;cursor:pointer;background:#f4f8ef;color:#3f654b;font-size:13px;line-height:1.8}.handout-summary>strong{font-weight:600}.handout-summary>span{display:block;font-size:11px;font-weight:400;margin-top:3px;color:#6d826d}.handout-content{padding:25px;color:#3c5144;font-size:13px;line-height:1.9;min-width:0;overflow-wrap:anywhere}.handout-content:empty{display:none}.handout-content h1{font-size:25px;line-height:1.5;margin:0 0 23px}.handout-content h2{font-size:20px;line-height:1.5;margin:30px 0 14px}.handout-content h3{font-size:17px;line-height:1.6;margin:25px 0 12px}.handout-content h4{font-size:14px;margin:20px 0 9px}.handout-content p{margin:12px 0}.handout-content ul,.handout-content ol{padding-left:25px}.handout-content li{margin:5px 0}.handout-content table{display:block;max-width:100%;overflow-x:auto;font-size:12px;margin:20px 0;border:1px solid #e1e6dc}.handout-content th{white-space:normal;line-height:1.6}.handout-content td{line-height:1.8;min-width:100px}.handout-content math[display=block]{display:block;max-width:100%;overflow-x:auto;overflow-y:hidden;padding:13px 2px;margin:15px 0;white-space:nowrap}.handout-content math:not([display=block]){max-width:100%;font-size:1.04em}.handout-content pre{max-width:100%;overflow-x:auto;padding:13px;background:#f7f9f3;border-radius:5px;font-size:12px}.handout-content .footnotes{font-size:11px;border-top:1px solid #dce5d7;margin-top:28px;padding-top:15px}.handout-content a{overflow-wrap:anywhere}.handout-content .research-pipeline{margin:20px 0}.handout-content .pipeline-caption{font-size:14px}.handout-content .pipeline-node h4{margin:0 0 11px;font-size:12px}.handout-content .pipeline-note{font-size:11px}.analysis-record-meta{display:flex;align-items:center;gap:10px;flex-wrap:wrap;font-size:10px;color:#7c8f7e}.analysis-record-meta time{font-variant-numeric:tabular-nums}.analysis-executor{color:#6d8375}.analysis-result-link{margin-top:20px}.analysis-result-note,.analysis-mastery-note{font-size:11px;line-height:1.8;color:#7a8d7c;margin-top:15px}.analysis-mastery-note{border-top:1px solid #e7ece3;padding-top:13px}
 @media(max-width:1100px){.pipeline-map{grid-template-columns:minmax(0,1fr) 20px minmax(0,1fr);gap:8px}.pipeline-branches{grid-column:1/-1;grid-template-columns:repeat(2,minmax(0,1fr));margin-top:14px}.pipeline-stage-arrow.bridge-branches{grid-column:1/-1;transform:rotate(90deg);padding:0;line-height:20px}.pipeline-map-simple{grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}.pipeline-map-simple .pipeline-stage{grid-column:auto}.handout-content .pipeline-map{grid-template-columns:1fr}.handout-content .pipeline-stage-arrow{grid-column:1;transform:rotate(90deg);padding:0}.handout-content .pipeline-branches{grid-template-columns:repeat(2,minmax(0,1fr))}}
@@ -1420,6 +1437,171 @@ body.is-resizing-column,body.is-resizing-column *{cursor:col-resize!important;us
 })();
 
 ;
+/* Measure/item view of an explicitly registered wide table. No name inference,
+ * data reshaping or aggregation. Only the selected physical member is rendered.
+ */
+(() => {
+  'use strict';
+  const states = new Map();
+  const sources = {
+    licensing: ['授權資料', 'Licensing records'], coded: ['研究者編碼', 'Researcher-coded'],
+    compustat: ['串接 Compustat', 'Linked Compustat'], linkage: ['公司識別配對', 'Company linkage'],
+    administrative: ['整理與樣本欄位', 'Data and sample management'], territory_gdp: ['授權地區串接 GDP', 'Territory-linked GDP']
+  };
+  const transforms = {
+    currency: ['已換算為 2016 年美元', 'Converted to 2016 USD'], relative: ['依合約生效年對齊', 'Indexed to the agreement year'],
+    mean: ['生效當年及可得前期的平均', 'Mean of the agreement year and available prior years'],
+    log: ['平均金額轉為美元後取自然對數', 'Natural log of the mean expressed in dollars'],
+    indicator: ['由文字辨識的 0/1 指標', 'Text-based 0/1 indicator'], count: ['類型計數', 'Count of types'],
+    any: ['是否辨識到任一類型', 'Any recognized type'], missing_zero: ['原缺值補為 0', 'Source missing values recoded to zero'],
+    mode: ['跨年最常見的 CUSIP', 'Most frequent CUSIP across years'], prefix: ['取 CUSIP 前六碼', 'First six characters of CUSIP'],
+    copy: ['由來源欄複製', 'Copied from the source field'], selection: ['依各項條件選樣', 'Condition-based sample flag'],
+    territory_sum: ['依授權地區加總 GDP', 'GDP summed over licensed territories'], parsed: ['從雙方文字拆出名稱', 'Name parsed from combined party text']
+  };
+  const reps = {annual: ['財政年度值', 'Fiscal-year value'], relative: ['相對生效年', 'Relative to the effective year'],
+    mean: ['可得年平均', 'Available-year mean'], log_mean: ['平均的自然對數', 'Natural log of the mean'],
+    raw: ['原始文字', 'Original text'], indicator: ['個別 0/1 指標', 'Individual 0/1 indicator'],
+    any: ['是否任一類型', 'Any recognized type'], count: ['類型數', 'Number of types']};
+  const axisLabels = {party: ['當事人', 'Party'], representation: ['資料版本', 'Representation'], time: ['年份／相對年', 'Year / relative year'], item: ['類型', 'Category']};
+  const language = () => window.ResearchI18n?.language || 'en';
+  const element = (tag, className = '') => { const n = document.createElement(tag); if (className) n.className = className; return n; };
+  function bilingual(tag, className, zh, en) {
+    const n = element(tag, className); n.dataset.i18nZh = zh; n.dataset.i18nEn = en;
+    n.textContent = language() === 'en' ? en : zh; return n;
+  }
+  function labels(family, axis, value) {
+    if (axis === 'party') return value === 'lnsor' ? ['授權方', 'Licensor'] : ['被授權方', 'Licensee'];
+    if (axis === 'time') return /^\d{4}$/.test(value) ? [value, value] : value === 'yr0'
+      ? ['生效當年（yr0）', 'Effective year (yr0)'] : [`生效前 ${value.slice(2)} 年（${value}）`, `${value.slice(2)} year(s) before the effective year (${value})`];
+    const member = family.members.find(m => m.coords[axis] === value && m.choice_en);
+    return member ? [member.choice_zh, member.choice_en] : reps[value] || [value, value];
+  }
+  function stateFor(datasetId) {
+    if (!states.has(datasetId)) states.set(datasetId, {mode: 'families', page: 0, chosen: new Map(), open: new Set(), lastSelected: null});
+    return states.get(datasetId);
+  }
+  function refresh(ctx) {
+    window.ResearchI18n?.refresh(); window.ResearchDataTypes?.refresh(); ctx.layoutChanged();
+  }
+  function render(root, tables, ctx) {
+    const {registry} = ctx; const state = stateFor(ctx.datasetId);
+    const table = tables.find(t => t.id === registry.table_id);
+    if (!table) return;
+    const columns = new Map(table.columns.map(c => [c.name, c]));
+    const exact = table.columns.find(c => window.ResearchSearch.normalize(c.name) === ctx.query && ctx.query);
+    const controls = element('div', 'family-view-controls');
+    const modeLabel = element('label', 'select-field'); const mode = element('select');
+    mode.id = 'dictionary-view-mode';
+    modeLabel.append(bilingual('span', '', '查看方式', 'View'), mode);
+    for (const [value, zh, en] of [['families','按資料項目','By measure or item'],['columns','逐欄查看','Individual columns']]) {
+      const o = bilingual('option', '', zh, en); o.value = value; mode.append(o);
+    }
+    mode.value = state.mode;
+    mode.addEventListener('change', () => {
+      state.mode = mode.value;
+      const i = table.columns.findIndex(c => c.name === state.lastSelected);
+      state.page = i < 0 ? 0 : Math.floor(i / registry.individual_page_size); ctx.update();
+    });
+    controls.append(modeLabel, bilingual('p', 'muted family-view-help',
+      'CSV 匯出所有符合搜尋與分類的實際欄位。', 'CSV includes all physical columns matching the search and category.'));
+    root.append(controls);
+    if (state.mode === 'columns') {
+      const pages = Math.max(1, Math.ceil(table.columns.length / registry.individual_page_size));
+      state.page = Math.min(state.page, pages - 1);
+      if (exact) state.page = Math.floor(table.columns.indexOf(exact) / registry.individual_page_size);
+      const pager = element('div', 'family-pagination');
+      const previous = bilingual('button', 'button small', '上一頁', 'Previous'); previous.type = 'button'; previous.id = 'dictionary-page-previous';
+      const next = bilingual('button', 'button small', '下一頁', 'Next'); next.type = 'button'; next.id = 'dictionary-page-next';
+      previous.disabled = !state.page; next.disabled = state.page === pages - 1;
+      previous.addEventListener('click', () => { state.page--; ctx.update(); }); next.addEventListener('click', () => { state.page++; ctx.update(); });
+      pager.append(previous, bilingual('span', 'family-page-number', `第 ${state.page+1}／${pages} 頁`, `Page ${state.page+1} of ${pages}`), next);
+      controls.append(pager);
+      root.append(ctx.createTable({...table, columns: table.columns.slice(state.page*registry.individual_page_size,(state.page+1)*registry.individual_page_size)}, false));
+      return;
+    }
+    registry.families.forEach(family => {
+      const matches = family.members.filter(m => columns.has(m.column));
+      if (!matches.length) return;
+      const exactMember = exact && matches.find(m => m.column === exact.name);
+      if (exactMember) {state.chosen.set(family.id,exactMember.column);state.open.add(family.id);state.lastSelected=exactMember.column;}
+      let selected = matches.find(m => m.column === state.chosen.get(family.id)) || matches[0];
+      const card = element('details','table-card field-family'); card.dataset.familyId = family.id; card.dataset.tableId = table.id;
+      card.dataset.foldKey = `family:${ctx.datasetId}:${family.id}`;
+      const heading = element('summary','table-card-heading fold-summary');
+      const titles = element('div','fold-heading'); const origin = element('span','family-source');
+      titles.append(bilingual('h2','',family.title_zh,family.title_en),origin);
+      heading.append(titles,bilingual('span','fold-indicator','展開／收合','Open / close'));
+      const body = element('div','table-card-body family-body'); card.append(heading,body);
+      let mounted = false;
+      const showOrigin = () => {origin.replaceChildren(bilingual('span','',...sources[selected.source]));};
+      showOrigin();
+      function mount() {
+        if (mounted) return; mounted = true;
+        const selectors = element('div','family-selectors');
+        const controlNodes = new Map();
+        const active = element('div','family-active-field'); active.setAttribute('aria-live','polite');
+        const lineage = element('p','family-lineage'); const memberBody = element('div','family-member-host');
+        const defaultNote = matches.length > 1 ? bilingual('p','muted family-default-note','初始欄位按來源欄序顯示。','The initial selection follows source column order.') : null;
+        const filterHelp = bilingual('p','muted family-filter-help','灰色選項不符合目前篩選。','Disabled options do not match the current filters.');
+        filterHelp.id = `family-filter-${family.id}`;
+        body.replaceChildren(selectors,active,lineage,...(defaultNote?[defaultNote]:[]),filterHelp,memberBody);
+        function upstreamMatch(member, index) {
+          return family.axes.slice(0,index).every(axis => member.coords[axis] === selected.coords[axis]);
+        }
+        function configureAxis(axis, index) {
+          let wrap = controlNodes.get(axis);
+          if (selected.coords[axis] === undefined) {
+            if (wrap) {wrap.remove();controlNodes.delete(axis);} return;
+          }
+          if (!wrap) {
+            wrap = element('label','select-field family-selector');
+            const select = element('select'); select.dataset.familyAxis = axis;
+            select.id = `family-${family.id}-${axis}`; select.setAttribute('aria-describedby',filterHelp.id);
+            wrap.append(bilingual('span','',...axisLabels[axis]),select);selectors.append(wrap);controlNodes.set(axis,wrap);
+            select.addEventListener('change',() => {
+              const desired = {...selected.coords,[axis]:select.value};
+              const candidates = matches.filter(m => family.axes.slice(0,index+1).every(a => m.coords[a] === desired[a]));
+              if (!candidates.length) return;
+              const score = m => family.axes.slice(index+1).reduce((n,a)=>n+(m.coords[a]===desired[a]?1:0),0);
+              selected = candidates.reduce((a,b)=>score(b)>score(a)?b:a);
+              state.chosen.set(family.id,selected.column);state.lastSelected=selected.column;
+              // Retain the active select and focus; rebuild only downstream axes.
+              family.axes.forEach((a,i)=>{if(i>index)configureAxis(a,i);});paint();
+            });
+          }
+          const select = wrap.querySelector('select');
+          const values = [...new Set(family.members.filter(m=>upstreamMatch(m,index)).map(m=>m.coords[axis]).filter(v=>v!==undefined))];
+          if (axis === 'time') values.sort((a,b)=>Number(a.replace('yr',''))-Number(b.replace('yr','')));
+          select.replaceChildren();
+          values.forEach(value => {
+            const option = bilingual('option','',...labels(family,axis,value));option.value=value;
+            option.disabled = !matches.some(m=>upstreamMatch(m,index)&&m.coords[axis]===value); select.append(option);
+          });
+          select.value=selected.coords[axis];
+        }
+        function paint() {
+          active.replaceChildren(bilingual('span','','目前欄位：','Selected field: '));const code=element('code');code.textContent=selected.column;active.append(code);
+          lineage.replaceChildren();[sources[selected.source],...selected.transforms.map(t=>transforms[t])].forEach((pair,i)=>{
+            if(i)lineage.append(document.createTextNode(' · '));lineage.append(bilingual('span','',...pair));
+          });
+          filterHelp.hidden = ![...selectors.querySelectorAll('option')].some(o=>o.disabled);
+          memberBody.replaceChildren(ctx.createTable({...table,columns:[columns.get(selected.column)]},true));
+          showOrigin();refresh(ctx);
+        }
+        family.axes.forEach(configureAxis);paint();
+      }
+      card.addEventListener('toggle',()=>{
+        if(card.open){state.open.add(family.id);mount();}
+        else {state.open.delete(family.id);body.replaceChildren();mounted=false;}
+        refresh(ctx);
+      });
+      card.open=state.open.has(family.id);root.append(card);if(card.open)mount();
+    });
+  }
+  window.ResearchFieldFamilies={render};
+})();
+
+;
 (() => {
   'use strict';
   const $ = (selector, root = document) => root.querySelector(selector);
@@ -1804,7 +1986,13 @@ body.is-resizing-column,body.is-resizing-column *{cursor:col-resize!important;us
       if (!shown.length && !groups.find(group => group.id === selectedGroup)?.columns.length && selectedGroup) {
         results.append(empty('目前沒有直接對應的欄位', '這個類別目前沒有已確認的對應欄位，保留供日後有新資料或定義時更新。'));
       } else if (!shown.length) results.append(empty('沒有符合的欄位', '試著縮短關鍵字，或選擇所有 Schema。'));
-      shown.forEach(table => results.append(tableCard(table)));
+      if (dataset.field_families) {
+        window.ResearchFieldFamilies.render(results, shown, {
+          registry: dataset.field_families, query: window.ResearchSearch.normalize(search.value),
+          createTable: (table, embedded) => tableCard(table, embedded), update,
+          layoutChanged, datasetId: dataset.id
+        });
+      } else shown.forEach(table => results.append(tableCard(table)));
       updateBulkControls();
       $('#announcer').textContent = `找到 ${matchedCount} 個欄位。`;
     }
@@ -1871,7 +2059,7 @@ body.is-resizing-column,body.is-resizing-column *{cursor:col-resize!important;us
     }
     return cell;
   }
-  function tableCard(table) {
+  function tableCard(table, embedded = false) {
     const meta = node('div', 'table-card-meta', text('span', '', `觀察單位：${table.unit || '待確認'}`));
     if (table.row_estimate !== null && table.row_estimate !== undefined) meta.append(text('span', '', `WRDS 規劃器列數估計：${number(table.row_estimate)}（非精確筆數）`));
     const head = node('summary', 'table-card-heading fold-summary', node('div', 'fold-heading', text('span', 'eyebrow', table.schema || 'DATA TABLE'), text('h2', '', table.title_zh || table.name), text('code', '', table.name)), node('span', 'fold-indicator', node('span', 'fold-open-label', '收合資料表'), node('span', 'fold-closed-label', '展開資料表'), node('span', 'fold-chevron', '⌄')));
@@ -1961,6 +2149,7 @@ body.is-resizing-column,body.is-resizing-column *{cursor:col-resize!important;us
     });
     refreshExamples();
     tableNode.append(tbody);
+    if (embedded) return node('div', 'family-member', isPublic ? null : samplePanel, node('div', 'table-scroll', tableNode));
     const card = fold(`table:${table.id}`, 'table-card', head, node('div', 'table-card-body', overview, isPublic ? null : samplePanel, node('div', 'table-scroll', tableNode)));
     card.dataset.tableId = table.id;
     return card;
