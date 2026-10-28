@@ -1,5 +1,7 @@
 # Changelog
 
+- 2026-10-29: Improve private source-reference validation and preserve exception records.
+
 - 2026-10-29: Improve private transfer compatibility and offline integrity checks.
 
 - 2026-10-28: Revise the second private methods handout after an independent review, with the article's equations and notation, numbered pipeline inputs and outputs, and matching updates to its method design page, which now shows numbered inputs and outputs and one column per pipeline step.
