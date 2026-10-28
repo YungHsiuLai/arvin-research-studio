@@ -1,5 +1,7 @@
 # Changelog
 
+- 2026-10-28: Clarify private data storage and source-preservation guidance; published dataset content is unchanged.
+
 - 2026-10-28: Improve private data-transfer utilities and offline reliability checks; published research summaries are unchanged.
 
 - 2026-10-28: Maintain private offline reporting and bounded workflow checks; published research summaries are unchanged.
