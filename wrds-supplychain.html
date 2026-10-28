@@ -699,12 +699,6 @@ body.is-resizing-column,body.is-resizing-column *{cursor:col-resize!important;us
       });
       return element('div', `library-field ${className}`, label('dt', '', labelKey), element('dd', '', list));
     }
-    // Pipeline inputs and outputs are numbered so readers can count them.
-    if ((key === 'inputs' || key === 'outputs') && en.length > 1 && en.length === zh.length && en.every(Boolean) && zh.every(Boolean)) {
-      const list = element('ol', 'pipeline-io-list');
-      en.forEach((line, index) => list.append(bilingual('li', '', zh[index], line)));
-      return element('div', `library-field ${className}`, label('dt', '', labelKey), element('dd', '', list));
-    }
     return element('div', `library-field ${className}`, label('dt', '', labelKey), value('dd', '', record, key));
   }
   function reveal(node) {
