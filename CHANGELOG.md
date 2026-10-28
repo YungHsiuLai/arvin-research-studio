@@ -1,5 +1,7 @@
 # Changelog
 
+- 2026-10-28: Extend publication checks to the explicitly approved additional dataset page; keep unknown files blocked.
+
 - 2026-10-28: Add RoyaltyStat · Technology Licensing as a separate historical research dataset, with 808 fields, reviewed examples, five field categories and linked company financials. Retain the existing WRDS Preview and explain Stata storage types in both languages.
 
 - 2026-10-28: Clarify private identifier-format checks; published dataset content is unchanged.
