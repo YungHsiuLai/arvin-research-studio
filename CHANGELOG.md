@@ -1,5 +1,7 @@
 # Changelog
 
+- 2026-10-28: Clarify the structure, step order, abbreviations and variable definitions of the private methods handout; published research summaries are unchanged.
+
 - 2026-10-28: Add a private bilingual methods handout for an additional marketing article; published research summaries are unchanged.
 
 - 2026-10-28: Preserve private-storage validation checks; published dataset content is unchanged.
