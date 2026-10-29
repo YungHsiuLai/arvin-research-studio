@@ -1,5 +1,7 @@
 # Changelog
 
+- 2026-10-29: Extend private historical-source compatibility with independent provenance and integrity checks.
+
 - 2026-10-29: Add a second research design to Research design & methods, with its complete bilingual handout, ten new methods and twelve study implementations, and a pipeline whose steps show checks against the paper, expected sample sizes in green and colour marks for details the article leaves open.
 - 2026-10-29: Reduce redundant private transfer bookkeeping while preserving shared limits and stop checks.
 
