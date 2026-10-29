@@ -1,5 +1,7 @@
 # Changelog
 
+- 2026-10-29: Name the datasets each step uses in the second research design's pipeline, in its handout and on the research design page, with short dataset names defined in the handout's data section.
+
 - 2026-10-29: Extend private historical-source compatibility with independent provenance and integrity checks.
 
 - 2026-10-29: Add a second research design to Research design & methods, with its complete bilingual handout, ten new methods and twelve study implementations, and a pipeline whose steps show checks against the paper, expected sample sizes in green and colour marks for details the article leaves open.
