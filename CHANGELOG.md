@@ -1,5 +1,6 @@
 # Changelog
 
+- 2026-10-29: Add to every step of the same private handout's method pipeline the sample sizes and summary values the article reports, with expected sample sizes in green bold, so a replication can compare its counts; published research summaries are unchanged.
 - 2026-10-29: Improve private acquisition scheduling, resumability and exception checks.
 
 - 2026-10-29: Mark in blue bold, in the same private handout's method pipeline, the details the article leaves open that a replication can settle by trying a few choices; published research summaries are unchanged.
