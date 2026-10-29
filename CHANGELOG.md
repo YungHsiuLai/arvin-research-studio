@@ -1,5 +1,7 @@
 # Changelog
 
+- 2026-10-29: Mark in blue bold, in the same private handout's method pipeline, the details the article leaves open that a replication can settle by trying a few choices; published research summaries are unchanged.
+
 - 2026-10-29: Mark in red bold, in the private handout's method pipeline, the quantities whose construction the article never describes; published research summaries are unchanged.
 
 - 2026-10-29: Improve private source-reference validation and preserve exception records.
