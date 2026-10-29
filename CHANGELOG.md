@@ -1,6 +1,7 @@
 # Changelog
 
 - 2026-10-29: Add a second research design to Research design & methods, with its complete bilingual handout, ten new methods and twelve study implementations, and a pipeline whose steps show checks against the paper, expected sample sizes in green and colour marks for details the article leaves open.
+- 2026-10-29: Reduce redundant private transfer bookkeeping while preserving shared limits and stop checks.
 
 - 2026-10-29: Add to every step of the same private handout's method pipeline the sample sizes and summary values the article reports, with expected sample sizes in green bold, so a replication can compare its counts; published research summaries are unchanged.
 - 2026-10-29: Improve private acquisition scheduling, resumability and exception checks.
