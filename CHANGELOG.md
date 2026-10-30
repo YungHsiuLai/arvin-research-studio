@@ -1,6 +1,7 @@
 # Changelog
 
 - 2026-10-29: Name the datasets each step uses in the second research design's pipeline, in its handout and on the research design page, with short dataset names defined in the handout's data section.
+- 2026-10-30: Improve private acquisition ordering while preserving resumability and source checks.
 
 - 2026-10-29: Extend private historical-source compatibility with independent provenance and integrity checks.
 
