@@ -1,5 +1,7 @@
 # Changelog
 
+- 2026-10-30: Record private transport evaluation and retain source-integrity boundaries.
+
 - 2026-10-30: Improve private transfer exception handling, shared limits and resumable source records.
 
 - 2026-10-30: Add private acquisition interval completion checks and preserve resumable scheduling.
