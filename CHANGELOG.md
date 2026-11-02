@@ -1,5 +1,7 @@
 # Changelog
 
+- 2026-11-02: Add a private geographic analysis walkthrough with fixed specifications, source-timing checks and separate causal-design limits; numerical results remain local.
+
 - 2026-11-02: Add a private source-figure comparison with explicit reading precision and sample distinctions; published research summaries are unchanged.
 
 - 2026-11-02: Rename the private data workspace, link field and classification references, and keep primary measures separate from source-evidence sensitivities.
