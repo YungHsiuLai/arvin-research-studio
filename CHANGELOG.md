@@ -1,5 +1,7 @@
 # Changelog
 
+- 2026-11-02: Add year-specific input normalization and paired-year checks while keeping a common private Stata analysis specification.
+
 - 2026-11-02: Extend the private Stata workflow with reviewed category mapping, explicit module comments and separate construction diagnostics while retaining earlier execution evidence.
 
 - 2026-11-02: Fix repeat execution of private Stata preparation while preserving completed inputs and prior logs.
