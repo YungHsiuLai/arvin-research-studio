@@ -1,5 +1,7 @@
 # Changelog
 
+- 2026-11-02: Add a reviewed, source-linked comparison of contractual control terms, with explicit selection and performance-measurement limits; preserve the existing agreement study.
+
 - 2026-11-02: Extend the private analysis walkthrough with explicit model definitions, complete assumption records and reproducible sensitivity audits; outputs remain local.
 
 - 2026-11-02: Add a private geographic analysis walkthrough with fixed specifications, source-timing checks and separate causal-design limits; numerical results remain local.
