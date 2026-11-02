@@ -1,5 +1,7 @@
 # Changelog
 
+- 2026-11-02: Clarify the purpose and expected inputs and outputs at the start of private Stata walkthroughs.
+
 - 2026-11-02: Add concise, reviewed private Stata walkthroughs with reusable preparation and explicit saved-output steps; published research summaries are unchanged.
 
 - 2026-11-02: Refine private input discovery and checkpoint resilience, preserving stepwise execution and prior run evidence.
