@@ -1,5 +1,9 @@
 # Changelog
 
+- 2026-11-02: Refine private input discovery and checkpoint resilience, preserving stepwise execution and prior run evidence.
+
+- 2026-11-02: Add private offline preparation tools and checked, stepwise Stata workflows; public research summaries are unchanged.
+
 - 2026-11-02: Update private acquisition priorities while retaining deferred work and source records.
 
 - 2026-11-01: Support private acquisition priorities across calendar boundaries while preserving resumable records.
