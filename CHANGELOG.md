@@ -1,5 +1,7 @@
 # Changelog
 
+- 2026-11-03: Add a reviewed EDGAR comparison for three governance IVs, with original clause excerpts, coding rules, outcome-linkage limits and bilingual source tables; preserve earlier analyses.
+
 - 2026-11-03: Refine private clause-based variable definitions with explicit conditions, source checks and missing-information states; reviewed public analyses remain unchanged.
 
 - 2026-11-02: Complete private literature measurement records and source-integrity checks; preserve equation-specific roles, unresolved source details and the existing reviewed public comparison.
