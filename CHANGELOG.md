@@ -1,5 +1,7 @@
 # Changelog
 
+- 2026-11-02: Fix repeat execution of private Stata preparation while preserving completed inputs and prior logs.
+
 - 2026-11-02: Consolidate private Stata entry points and shared analysis steps while preserving historical execution evidence.
 
 - 2026-11-02: Clarify the purpose and expected inputs and outputs at the start of private Stata walkthroughs.
