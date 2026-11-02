@@ -1,5 +1,7 @@
 # Changelog
 
+- 2026-11-02: Update private acquisition priorities while retaining deferred work and source records.
+
 - 2026-11-01: Support private acquisition priorities across calendar boundaries while preserving resumable records.
 
 - 2026-10-30: Record private transport evaluation and retain source-integrity boundaries.
