@@ -1,5 +1,7 @@
 # Changelog
 
+- 2026-11-02: Preserve full product text and normalize equivalent unit labels in the common private Stata workflow.
+
 - 2026-11-02: Add year-specific input normalization and paired-year checks while keeping a common private Stata analysis specification.
 
 - 2026-11-02: Extend the private Stata workflow with reviewed category mapping, explicit module comments and separate construction diagnostics while retaining earlier execution evidence.
