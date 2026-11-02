@@ -1,5 +1,7 @@
 # Changelog
 
+- 2026-11-02: Clarify separate classification, quantity and sample-selection diagnostics for the private Stata workflow; retain prior runs and published research summaries.
+
 - 2026-11-02: Preserve full product text and normalize equivalent unit labels in the common private Stata workflow.
 
 - 2026-11-02: Add year-specific input normalization and paired-year checks while keeping a common private Stata analysis specification.
