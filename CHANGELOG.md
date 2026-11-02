@@ -1,5 +1,7 @@
 # Changelog
 
+- 2026-11-02: Decode private source package-size representation, validate converted counts and verify absolute quantities in paired-year Stata checks while preserving raw caches and prior runs.
+
 - 2026-11-02: Clarify separate classification, quantity and sample-selection diagnostics for the private Stata workflow; retain prior runs and published research summaries.
 
 - 2026-11-02: Preserve full product text and normalize equivalent unit labels in the common private Stata workflow.
