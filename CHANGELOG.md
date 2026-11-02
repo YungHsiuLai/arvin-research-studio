@@ -1,5 +1,7 @@
 # Changelog
 
+- 2026-11-03: Refine private clause-based variable definitions with explicit conditions, source checks and missing-information states; reviewed public analyses remain unchanged.
+
 - 2026-11-02: Complete private literature measurement records and source-integrity checks; preserve equation-specific roles, unresolved source details and the existing reviewed public comparison.
 
 - 2026-11-02: Add a reviewed, source-linked comparison of contractual control terms, with explicit selection and performance-measurement limits; preserve the existing agreement study.
