@@ -1,5 +1,7 @@
 # Changelog
 
+- 2026-11-02: Extend the private analysis walkthrough with explicit model definitions, complete assumption records and reproducible sensitivity audits; outputs remain local.
+
 - 2026-11-02: Add a private geographic analysis walkthrough with fixed specifications, source-timing checks and separate causal-design limits; numerical results remain local.
 
 - 2026-11-02: Add a private source-figure comparison with explicit reading precision and sample distinctions; published research summaries are unchanged.
