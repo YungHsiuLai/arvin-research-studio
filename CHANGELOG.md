@@ -1,5 +1,9 @@
 # Changelog
 
+- 2026-11-02: Rename the private data workspace, link field and classification references, and keep primary measures separate from source-evidence sensitivities.
+
+- 2026-11-02: Correct shared private product classification and sample handling, retain quantity diagnostics and strengthen paired-year regression checks; prior runs remain preserved.
+
 - 2026-11-02: Decode private source package-size representation, validate converted counts and verify absolute quantities in paired-year Stata checks while preserving raw caches and prior runs.
 
 - 2026-11-02: Clarify separate classification, quantity and sample-selection diagnostics for the private Stata workflow; retain prior runs and published research summaries.
