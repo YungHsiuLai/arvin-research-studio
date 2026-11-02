@@ -1,5 +1,7 @@
 # Changelog
 
+- 2026-11-02: Add a private source-figure comparison with explicit reading precision and sample distinctions; published research summaries are unchanged.
+
 - 2026-11-02: Rename the private data workspace, link field and classification references, and keep primary measures separate from source-evidence sensitivities.
 
 - 2026-11-02: Correct shared private product classification and sample handling, retain quantity diagnostics and strengthen paired-year regression checks; prior runs remain preserved.
