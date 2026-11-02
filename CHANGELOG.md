@@ -1,5 +1,7 @@
 # Changelog
 
+- 2026-11-03: Clarify bilingual explanations of the three EDGAR governance IVs while preserving original excerpts, coding rules, source links and prior evidence.
+
 - 2026-11-03: Add a reviewed EDGAR comparison for three governance IVs, with original clause excerpts, coding rules, outcome-linkage limits and bilingual source tables; preserve earlier analyses.
 
 - 2026-11-03: Refine private clause-based variable definitions with explicit conditions, source checks and missing-information states; reviewed public analyses remain unchanged.
