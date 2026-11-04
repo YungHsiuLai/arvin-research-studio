@@ -1,5 +1,7 @@
 # Changelog
 
+- 2026-11-04: Isolate private maintenance work from transfer scheduling while retaining integrity checks and resumable records.
+
 - 2026-11-03: Clarify licensing parties and the governance-to-performance framework; simplify the three-IV tables while retaining source excerpts and coding conditions.
 
 - 2026-11-03: Name the three EDGAR governance constructs and clarify their framework classification in both languages; preserve clause evidence and measurement rules.
