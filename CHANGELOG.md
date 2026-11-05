@@ -1,5 +1,7 @@
 # Changelog
 
+- 2026-11-05: Add a bilingual advertising-demand methods handout, source-linked equations and an interactive research workflow; verify formula rendering, language switching and pipeline geometry while preserving source-scope limits.
+
 - 2026-11-04: Isolate private maintenance work from transfer scheduling while retaining integrity checks and resumable records.
 
 - 2026-11-03: Clarify licensing parties and the governance-to-performance framework; simplify the three-IV tables while retaining source excerpts and coding conditions.
