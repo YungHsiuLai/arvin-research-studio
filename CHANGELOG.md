@@ -1,5 +1,7 @@
 # Changelog
 
+- 2026-11-05: Simplify private reading-document front matter and reference formatting while retaining the complete bibliography.
+
 - 2026-11-05: Refine private reading-format conventions and verify the final document layout; reviewed public research content remains unchanged.
 
 - 2026-11-05: Refine private reading-artifact layout and document reusable bilingual editorial conventions; preserve reviewed research metadata.
