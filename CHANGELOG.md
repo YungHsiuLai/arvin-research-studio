@@ -1,5 +1,7 @@
 # Changelog
 
+- 2026-11-05: Enlarge interface reading sizes, raise small control targets and shorten the sticky header on every page in both languages.
+
 - 2026-11-05: Raise interface text contrast to at least 4.5:1 and reduce interface font weights to two levels across both languages.
 
 - 2026-11-05: Show dictionary headings and dataset fact labels in the selected language, and write English section labels in sentence case.
