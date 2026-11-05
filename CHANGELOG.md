@@ -1,5 +1,7 @@
 # Changelog
 
+- 2026-11-05: Preserve private diagnostics during local contention and bound incomplete background maintenance.
+
 - 2026-11-05: Use one visual vocabulary for sources, AI verification, unresolved items and data scope across the dictionary, methods, readings and contract excerpts.
 
 - 2026-11-05: Complete English interface coverage for local-only pages; published pages are unchanged.
