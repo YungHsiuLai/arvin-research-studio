@@ -1,5 +1,7 @@
 # Changelog
 
+- 2026-11-05: Use one visual vocabulary for sources, AI verification, unresolved items and data scope across the dictionary, methods, readings and contract excerpts.
+
 - 2026-11-05: Complete English interface coverage for local-only pages; published pages are unchanged.
 
 - 2026-11-05: Serve Inter and Noto Sans TC with the site so text renders consistently and Chinese stays legible at small sizes; both fonts are licensed under the SIL Open Font License 1.1.

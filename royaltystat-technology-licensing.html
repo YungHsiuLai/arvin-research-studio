@@ -33,7 +33,7 @@
 @media(max-width:700px){.sidebar-autohide>.sidebar{padding:30px 14px 24px}.sidebar-autohide .brand-symbol{display:none}.sidebar-autohide .brand br{display:initial}.sidebar-autohide .nav-list a{white-space:normal}.sidebar-autohide:not(.sidebar-collapsed) .topbar-right{display:none}.sidebar-autohide:not(.sidebar-collapsed) .breadcrumb #breadcrumb-current,.sidebar-autohide:not(.sidebar-collapsed) .breadcrumb-separator{display:none}}
 @media print{.sidebar-autohide>.workspace{width:100%;margin-left:0}}
 @media print{.sidebar,.sidebar-edge,.topbar,.workspace-footer,.heading-actions,.toolbar,.table-directory{display:none!important}.app-shell{display:block}.workspace{display:block}#main{max-width:none;padding:0}.panel,.table-card,.paper-card,.idea-card{break-inside:avoid;box-shadow:none}.dictionary-layout{display:block}.table-scroll{overflow:visible}.column-table{min-width:0}.hero{background:white}.stats-grid{grid-template-columns:repeat(4,1fr)}body{background:white}.fold-indicator{display:none}}
-.language-control{display:flex;align-items:center;flex-shrink:0;margin-left:auto}.language-control select{max-width:116px;min-width:104px;padding:6px 8px;border:1px solid #d5dfd5;border-radius:6px;background:#fff;color:#466454;font-size:12px}.topbar-left{min-width:0}.topbar-right{flex-shrink:0;margin-left:auto}.topbar-right[hidden]{display:none!important}.definition-list{margin:0;padding-left:18px}.definition-list>li+li{margin-top:14px}.definition-label{display:block;font-size:12px;color:#4e6959;margin-bottom:5px;font-weight:600}.definition-verified-value{font-size:13px;color:var(--muted);line-height:1.8;overflow-wrap:anywhere}
+.language-control{display:flex;align-items:center;flex-shrink:0;margin-left:auto}.language-control select{max-width:116px;min-width:104px;padding:6px 8px;border:1px solid #d5dfd5;border-radius:6px;background:#fff;color:#466454;font-size:12px}.topbar-left{min-width:0}.topbar-right{flex-shrink:0;margin-left:auto}.topbar-right[hidden]{display:none!important}.definition-list{margin:0;padding:0;list-style:none}.definition-list>li+li{margin-top:14px}.definition-label{display:block;font-size:12px;color:#4e6959;margin-bottom:5px;font-weight:600}.definition-verified-value{font-size:13px;color:var(--muted);line-height:1.8;overflow-wrap:anywhere}
 .page-heading>div:first-child{flex:1;min-width:0}.page-heading p{max-width:none;width:100%;overflow-wrap:anywhere}.dataset-card p{max-width:none;min-width:0;overflow-wrap:anywhere}
 .workspace-footer #build-date{margin-left:auto;text-align:right;align-self:flex-end;max-width:100%;overflow-wrap:anywhere}
 .data-type-help{font-family:var(--font-ui);font-size:12px;line-height:1.7;white-space:normal;overflow-wrap:anywhere;color:var(--muted)}.public-field-example .example-value-note{display:block;font-size:12px;line-height:1.6;color:var(--muted);margin-top:4px;overflow-wrap:anywhere}
@@ -50,6 +50,17 @@
 @media(max-width:700px){.sidebar-autohide .sidebar-bottom{display:block}.sidebar-autohide:not(.sidebar-collapsed) .fold-summary{flex-direction:column;gap:8px}.sidebar-autohide:not(.sidebar-collapsed) .fold-heading{width:100%}.sidebar-autohide:not(.sidebar-collapsed) .fold-indicator{align-self:flex-end}.sidebar-autohide:not(.sidebar-collapsed) .fold-indicator .fold-open-label,.sidebar-autohide:not(.sidebar-collapsed) .fold-indicator .fold-closed-label{max-width:none}}
 @media(max-width:980px){.top-dataset-control{flex-basis:200px;max-width:200px}.top-dataset-control select{font-size:12px;padding:6px}.has-dataset-switcher .sidebar-toggle #sidebar-toggle-label{display:none}}
 @media(max-width:700px){.topbar.has-dataset-switcher{height:auto;min-height:49px;flex-wrap:wrap;padding-top:8px;padding-bottom:8px}.has-dataset-switcher .topbar-left{flex:0 0 auto}.has-dataset-switcher .breadcrumb{display:none}.top-dataset-control{flex:1 1 100px;max-width:none}.sidebar-autohide:not(.sidebar-collapsed) .top-dataset-control{order:2;flex-basis:100%}.sidebar-autohide:not(.sidebar-collapsed) .has-dataset-switcher .language-control{margin-left:auto}.sidebar-autohide:not(.sidebar-collapsed) .dataset-facts{scroll-margin-top:110px}.column-width-actions>.button{max-width:100%;white-space:normal;overflow-wrap:anywhere}}
+
+/* One evidence vocabulary: solid ink is a source, dashed teal an AI reading, amber unresolved, blue data scope. */
+.evidence{padding-left:10px;border-left:2px solid var(--ink)}
+.evidence-ai{border-left:2px dashed var(--teal)}
+.evidence-open{border-left-color:var(--amber)}
+.evidence-scope{border-left-color:var(--blue)}
+.evidence-label{display:block;font-size:12px;font-weight:600}
+.evidence :is(.definition-label,.evidence-label,.edgar-content-label,dt){color:var(--ink)}
+.evidence-ai :is(.definition-label,.evidence-label,.edgar-content-label,dt){color:var(--teal)}
+.evidence-open :is(.definition-label,.evidence-label,.edgar-content-label,dt){color:var(--amber)}
+.evidence-scope :is(.definition-label,.evidence-label,.edgar-content-label,dt){color:var(--blue)}
 
 /* The rights notice wraps within the sidebar without shrinking. */
 .sidebar-autohide .sidebar-bottom{flex-shrink:0;min-width:0;letter-spacing:0}
@@ -982,7 +993,7 @@ body.is-resizing-column,body.is-resizing-column *{cursor:col-resize!important;us
         const sourceDesign = designs.find(design => design.id === variant.design_id);
         const variantHeading = element('div', 'fold-heading', value('strong', '', variant, 'title'), sourceDesign ? value('small', 'variant-source-title', sourceDesign, 'title') : null);
         const variantSummary = element('summary', 'fold-summary variant-summary', variantHeading, indicator('variantOpen', 'variantClose'));
-        const variantBody = element('div', 'method-variant-body', element('dl', 'library-fields', field(variant, 'implementation', 'implementation', 'library-field-wide'), field(variant, 'tuning'), field(variant, 'interpretation'), field(variant, 'limitations', 'limitations', 'library-field-wide'), field(variant, 'source_locator', 'locator', 'library-field-wide')));
+        const variantBody = element('div', 'method-variant-body', element('dl', 'library-fields', field(variant, 'implementation', 'implementation', 'library-field-wide'), field(variant, 'tuning'), field(variant, 'interpretation'), field(variant, 'limitations', 'limitations', 'library-field-wide evidence evidence-open'), field(variant, 'source_locator', 'locator', 'library-field-wide evidence evidence-source')));
         if (variant.design_id) variantBody.append(action('viewDesign', () => revealDesign(variant.design_id)));
         const item = fold(`variant:${method.id}:${variant.id}`, 'method-variant', variantSummary, variantBody);
         item.dataset.variantId = variant.id; item.dataset.designId = variant.design_id || ''; variants.append(item);
@@ -994,7 +1005,7 @@ body.is-resizing-column,body.is-resizing-column *{cursor:col-resize!important;us
     designSection.append(label('h2', 'library-section-title', 'designs'));
     designs.forEach(design => {
       const summary = element('summary', 'fold-summary library-summary', element('div', 'fold-heading', value('span', 'library-category-badge', design, 'study_type'), value('h3', '', design, 'title')), indicator('designOpen', 'designClose'));
-      const body = element('div', 'library-design-body', element('dl', 'library-fields', field(design, 'question', 'question', 'library-field-wide'), field(design, 'source_note', 'source', 'library-field-wide')), renderPipeline(design.pipeline, methods, revealMethod));
+      const body = element('div', 'library-design-body', element('dl', 'library-fields', field(design, 'question', 'question', 'library-field-wide'), field(design, 'source_note', 'source', 'library-field-wide evidence evidence-scope')), renderPipeline(design.pipeline, methods, revealMethod));
       const handoutSummary = element('summary', 'handout-summary', label('strong', '', 'handout'), label('span', '', 'handoutHint'));
       const handoutContent = element('div', 'handout-content'); handoutContent.dataset.i18nSkip = '';
       handoutContent.addEventListener('click', event => {
@@ -1131,7 +1142,7 @@ body.is-resizing-column,body.is-resizing-column *{cursor:col-resize!important;us
       const metadata = element('div', 'analysis-record-meta', value('span', 'library-category-badge', record, 'type'), raw('time', '', record.run_date || '—'));
       if (status === 'failed' || status === 'partial') metadata.append(label('span', 'badge neutral', status));
       const summary = element('summary', 'fold-summary library-summary', element('div', 'fold-heading', metadata, value('h2', '', record, 'title')), indicator('recordOpen', 'recordClose'));
-      const body = element('div', 'analysis-record-body', element('dl', 'library-fields', field(record, 'objective', 'objective', 'library-field-wide'), field(record, 'unit', 'unit', 'library-field-wide'), field(record, 'variables'), field(record, 'specification', 'specification', 'library-field-wide'), field(record, 'summary', 'summary', 'library-field-wide'), field(record, 'limitations', 'limitations', 'library-field-wide')));
+      const body = element('div', 'analysis-record-body', element('dl', 'library-fields', field(record, 'objective', 'objective', 'library-field-wide'), field(record, 'unit', 'unit', 'library-field-wide'), field(record, 'variables'), field(record, 'specification', 'specification', 'library-field-wide'), field(record, 'summary', 'summary', 'library-field-wide'), field(record, 'limitations', 'limitations', 'library-field-wide evidence evidence-open')));
       const report = renderReviewedReport(record.reviewed_report, record.id, dataset.id);
       if (report) body.append(report);
       if (!isPublic) {
@@ -1170,6 +1181,7 @@ body.is-resizing-column,body.is-resizing-column *{cursor:col-resize!important;us
     framework: ['研究框架與文獻', 'Frameworks & articles'], study: ['文章分析', 'Study analysis'], guide: ['個人講義', 'Authored guide'],
     more: ['展開閱讀', 'Read more'], collapse: ['全部摺疊', 'Collapse all'], expand: ['全部展開', 'Expand all'],
     noMatch: ['沒有符合的文獻，請調整關鍵字或篩選。', 'No matching readings. Change the search or filters.'],
+    locator: ['來源位置', 'Source location'], source_scope: ['來源範圍', 'Source scope'],
     source: ['文章來源', 'Article source'], pdf: ['開啟本機全文', 'Open local PDF'], note: ['開啟完整筆記', 'Open full notes'],
     question: ['研究問題', 'Research question'], prior_view: ['既有理解', 'Prior understanding'],
     change: ['改變了什麼理解', 'What changes'], evidence: ['支持的證據', 'Supporting evidence'],
@@ -1194,6 +1206,7 @@ body.is-resizing-column,body.is-resizing-column *{cursor:col-resize!important;us
   }
   const label = (tag, cls, key) => bi(tag, cls, ...labels[key]);
   const value = (tag, cls, item, key) => bi(tag, cls, item[key + '_zh'], item[key + '_en']);
+  const locator = text => el('small', 'question-locator evidence evidence-source', label('span', 'evidence-label', 'locator'), raw('span', '', text));
   function raw(tag, cls, text) { const n = el(tag, cls, text); n.dataset.i18nSkip = ''; return n; }
   function action(key, fn) {
     const n = el('button', 'button small', label('span', '', key)); n.type = 'button'; n.addEventListener('click', fn); return n;
@@ -1239,14 +1252,14 @@ body.is-resizing-column,body.is-resizing-column *{cursor:col-resize!important;us
       if (p[key + '_en']) body.append(el('section', 'question-note-section', label('h3', '', key), value('p', '', p, key)));
     }
     (p.sections || []).forEach(s => body.append(el('section', 'question-note-section', value('h3', '', s, 'title'),
-      el('ul', 'question-reading-points', s.points.map(point => el('li', '', value('p', '', point, 'text'), raw('small', 'question-locator', point.locator)))))));
+      el('ul', 'question-reading-points', s.points.map(point => el('li', '', value('p', '', point, 'text'), locator(point.locator)))))));
     if ((p.contribution_ids || []).length) body.append(el('div', 'chips', p.contribution_ids.map(id =>
       value('span', 'badge neutral', library.frameworks.contributions.find(c => c.id === id), 'title'))));
     for (const key of ['davis', 'canvas']) {
       if (!p[key]?.length) continue;
       body.append(el('section', 'question-note-section', label('h3', '', key), el('ul', 'question-reading-points',
         p[key].map(item => el('li', '', value('h4', '', library.frameworks[key].find(c => c.id === item.id), 'title'),
-          value('p', '', item, 'text'), raw('small', 'question-locator', item.locator))))));
+          value('p', '', item, 'text'), locator(item.locator))))));
     }
     (p.framework_ids || []).forEach(key => body.append(framework(library, key)));
     if (p.dataset_ids?.length) {
@@ -1256,7 +1269,7 @@ body.is-resizing-column,body.is-resizing-column *{cursor:col-resize!important;us
         if (entry) { const a = raw('a', '', entry.title); a.href = window.ResearchI18n.withLanguageURL('./' + id + '.html#dictionary'); connections.append(a); }
       }); body.append(connections);
     }
-    body.append(value('p', 'question-source-scope', p, 'scope'));
+    body.append(el('div', 'question-source-scope evidence evidence-scope', label('span', 'evidence-label', 'source_scope'), value('p', '', p, 'scope')));
     body.append(el('footer', 'question-reading-links', link('source', p.url),
       isPublic ? null : link('pdf', p.pdf_href, true), isPublic ? null : link('note', p.note_href, true)));
     const card = fold('paper:' + p.id, 'question-reading-card', head, body); card.dataset.readingId = p.id; return card;
@@ -1473,10 +1486,10 @@ body.is-resizing-column,body.is-resizing-column *{cursor:col-resize!important;us
         const quote = raw('blockquote', 'edgar-key-quote', passage.quote); quote.lang = 'en'; quote.cite = source.source_url;
         const entry = el('article', 'edgar-key-passage',
           bi('h3', '', passage.category_zh, passage.category_en),
-          el('p', 'edgar-passage-locator', bi('span', 'edgar-content-label', '原文位置：', 'Source location: '), raw('span', '', passage.locator)),
+          el('p', 'edgar-passage-locator evidence evidence-source', bi('span', 'edgar-content-label', '原文位置：', 'Source location: '), raw('span', '', passage.locator)),
           quote,
           el('p', 'edgar-passage-explanation', bi('strong', 'edgar-content-label', '說明：', 'Explanation: '), bi('span', '', passage.explanation_zh, passage.explanation_en)),
-          el('p', 'edgar-passage-limits', bi('strong', 'edgar-content-label', '解讀界線：', 'Interpretation limits: '), bi('span', '', passage.limits_zh, passage.limits_en)),
+          el('p', 'edgar-passage-limits evidence evidence-open', bi('strong', 'edgar-content-label', '解讀界線：', 'Interpretation limits: '), bi('span', '', passage.limits_zh, passage.limits_en)),
           sourceLink(source.source_url));
         entry.dataset.passageId = passage.id; passages.append(entry);
       });
@@ -1866,7 +1879,7 @@ body.is-resizing-column,body.is-resizing-column *{cursor:col-resize!important;us
   }
   function overview(root) {
     const introduction = heading('資料目錄', '資料集', '選擇資料集，查看欄位、實例與文獻案例。');
-    introduction.firstElementChild.append(text('p', 'preview-explanation', '(Preview) 表示目前只有樣本資料，沒有完整資料集。'));
+    introduction.firstElementChild.append(text('p', 'preview-explanation evidence evidence-scope', '(Preview) 表示目前只有樣本資料，沒有完整資料集。'));
     root.append(introduction);
     root.append(node('div', 'dataset-grid', datasetCatalog.map(entry => node('article', 'dataset-card',
       text('h2', '', entry.title || entry.id || '資料集'),
@@ -2044,7 +2057,7 @@ body.is-resizing-column,body.is-resizing-column *{cursor:col-resize!important;us
         const active = groups.find(group => group.id === selectedGroup);
         groupInfo.replaceChildren(active ? bilingualText('h2', '', active.title_zh, active.title_en) : text('h2', '', '欄位分類'),
           active ? bilingualText('p', '', active.description_zh, active.description_en) : text('p', '', '依交易屬性、治理安排與績效區分；識別及行政資訊另列。'),
-          node('p', 'field-group-source', text('span', '', '分類參考：'), ' ', link(groupRegistry.source?.title || '', groupRegistry.source?.url),
+          node('p', 'field-group-source evidence evidence-source', text('span', '', '分類參考：'), ' ', link(groupRegistry.source?.title || '', groupRegistry.source?.url),
             text('span', '', '。這是欄位用途的整理，不表示該文章使用本資料集。')));
       }
       if (tables.length > 1) matching.forEach(table => {
@@ -2199,8 +2212,8 @@ body.is-resizing-column,body.is-resizing-column *{cursor:col-resize!important;us
       verified.dataset.i18nZh = column.definition_verified_zh || '尚未完成測量定義核查。';
       verified.dataset.i18nEn = column.definition_verified_en || 'Measurement details have not yet been verified.';
       const definition = node('td', 'column-definition', node('ul', 'definition-list',
-        node('li', 'definition-original', text('strong', 'definition-label', '原始定義'), original),
-        node('li', 'definition-verified', text('strong', 'definition-label', 'AI查核'), verified)));
+        node('li', 'definition-original evidence evidence-source', text('strong', 'definition-label', '原始定義'), original),
+        node('li', `definition-verified evidence ${column.definition_verified_zh ? 'evidence-ai' : 'evidence-open'}`, text('strong', 'definition-label', 'AI查核'), verified)));
       const example = node('td', 'column-example');
       const hasIllustration = column.example !== null && column.example !== undefined && column.example !== '';
       const content = node('div'); example.append(content); exampleCells.push({ column, content });
