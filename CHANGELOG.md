@@ -1,5 +1,7 @@
 # Changelog
 
+- 2026-11-05: Number the five data sources and match diagram text to body text in both language versions of the methods handout.
+
 - 2026-11-05: Compact private reading-document footnotes and verify the resulting pagination.
 
 - 2026-11-05: Simplify private reading-document front matter and reference formatting while retaining the complete bibliography.
