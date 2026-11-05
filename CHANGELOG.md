@@ -1,5 +1,7 @@
 # Changelog
 
+- 2026-11-05: Refine private reading-format conventions and verify the final document layout; reviewed public research content remains unchanged.
+
 - 2026-11-05: Refine private reading-artifact layout and document reusable bilingual editorial conventions; preserve reviewed research metadata.
 
 - 2026-11-05: Add a bilingual advertising-demand methods handout, source-linked equations and an interactive research workflow; verify formula rendering, language switching and pipeline geometry while preserving source-scope limits.
