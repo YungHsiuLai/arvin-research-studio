@@ -1,5 +1,7 @@
 # Changelog
 
+- 2026-11-05: Show dictionary headings and dataset fact labels in the selected language, and write English section labels in sentence case.
+
 - 2026-11-05: Add a repeatable interface style audit and update browser checks for wide-table lazy rendering; published pages are unchanged.
 
 - 2026-11-05: Number the five data sources and match diagram text to body text in both language versions of the methods handout.
