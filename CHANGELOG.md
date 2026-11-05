@@ -1,5 +1,7 @@
 # Changelog
 
+- 2026-11-05: Compact private reading-document footnotes and verify the resulting pagination.
+
 - 2026-11-05: Simplify private reading-document front matter and reference formatting while retaining the complete bibliography.
 
 - 2026-11-05: Refine private reading-format conventions and verify the final document layout; reviewed public research content remains unchanged.
