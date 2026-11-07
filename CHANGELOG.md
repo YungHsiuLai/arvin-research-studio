@@ -1,5 +1,7 @@
 # Changelog
 
+- 2026-11-07: Isolate stale private work claims while preserving ownership checks and resumable records.
+
 - 2026-11-05: Use consistent mindful-index package names and update the documentation links.
 
 - 2026-11-05: Prepare a portable Stata handoff with concise instructions, shared settings and source-reuse checks; preserve prior local analysis records. Keep the package folder and documentation aligned. Complete the build-test fixture for bundled fonts.
