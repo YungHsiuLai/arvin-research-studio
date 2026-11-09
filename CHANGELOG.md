@@ -1,8 +1,6 @@
 # Changelog
 
-- 2026-11-09: Add a bilingual two-contract royalty comparison with field-level source evidence, grant status and related-document limits in Data analysis.
-
-- 2026-11-07: Isolate stale private work claims while preserving ownership checks and resumable records.
+- 2026-11-10: Add reproducible local descriptive summaries with explicit observation intervals, change definitions and saved data outputs.
 
 - 2026-11-05: Use consistent mindful-index package names and update the documentation links.
 
