@@ -1,5 +1,7 @@
 # Changelog
 
+- 2026-11-10: Refresh bundled font coverage for the latest reviewed text and verify interface style checks.
+
 - 2026-11-10: Add reproducible local descriptive summaries with explicit observation intervals, change definitions and saved data outputs.
 
 - 2026-11-09: Add a bilingual two-contract royalty comparison with field-level source evidence, grant status and related-document limits in Data analysis.
