@@ -1,5 +1,7 @@
 # Changelog
 
+- 2026-11-10: Clarify sample counts, annual trip ratios and county-versus-newspaper units; add explicit percentage-rate exports and streamline report charts, tables and formula footnotes. Preserve existing audit logs during rendering.
+
 - 2026-11-10: Consolidate local descriptive figures and tables into one dated, self-contained TeX/PDF report.
 
 - 2026-11-10: Extend annual input adapters and summary exports; add reproducible TeX/PDF descriptive figures with consistent styling and preserved local checks.
