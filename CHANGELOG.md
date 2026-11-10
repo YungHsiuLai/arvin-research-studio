@@ -1,5 +1,7 @@
 # Changelog
 
+- 2026-11-10: Label descriptive report pages, figures and table columns with their measurement units; remove redundant introductory paragraphs.
+
 - 2026-11-10: Remove the remaining figure-reading paragraph from the local descriptive report; retain data, formulas and audit records.
 
 - 2026-11-10: Clarify sample counts, annual trip ratios and county-versus-newspaper units; add explicit percentage-rate exports and streamline report charts, tables and formula footnotes. Preserve existing audit logs during rendering.
