@@ -1,5 +1,7 @@
 # Changelog
 
+- 2026-11-10: Add reproducible county/state concentration summaries, cumulative-share charts and ranked tables to the local descriptive report; align page order and measurement labels.
+
 - 2026-11-10: Label descriptive report pages, figures and table columns with their measurement units; place county counts before decline rates and remove redundant introductory paragraphs.
 
 - 2026-11-10: Remove the remaining figure-reading paragraph from the local descriptive report; retain data, formulas and audit records.
