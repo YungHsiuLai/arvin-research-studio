@@ -1,6 +1,6 @@
 # Changelog
 
-- 2026-11-10: Label descriptive report pages, figures and table columns with their measurement units; remove redundant introductory paragraphs.
+- 2026-11-10: Label descriptive report pages, figures and table columns with their measurement units; place county counts before decline rates and remove redundant introductory paragraphs.
 
 - 2026-11-10: Remove the remaining figure-reading paragraph from the local descriptive report; retain data, formulas and audit records.
 
