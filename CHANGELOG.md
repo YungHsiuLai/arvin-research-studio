@@ -1,5 +1,7 @@
 # Changelog
 
+- 2026-11-16: Add a reproducible all-year rule-comparison workflow with separate original and revised household indices, quantity reconciliation and sample checks.
+
 - 2026-11-16: Record annual trend diagnostics and primary-method checks; keep conditional classification sensitivities separate from the original index results.
 
 - 2026-11-16: Add a step-by-step Stata workflow for linking annual household residence codes to existing indices, with preserved observations and explicit match checks.
