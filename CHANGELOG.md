@@ -1,5 +1,7 @@
 # Changelog
 
+- 2026-11-17: Clarify original-versus-expanded classification comparisons and record source, quantity, weighting and category-scope checks; preserve existing numerical results and private audit evidence.
+
 - 2026-11-16: Export reviewed before/after trend figures and annual comparison tables from completed Stata rule-comparison results; preserve the original reports.
 
 - 2026-11-16: Add a reproducible all-year rule-comparison workflow with separate original and revised household indices, quantity reconciliation and sample checks.
