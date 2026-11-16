@@ -1,5 +1,7 @@
 # Changelog
 
+- 2026-11-16: Export reviewed before/after trend figures and annual comparison tables from completed Stata rule-comparison results; preserve the original reports.
+
 - 2026-11-16: Add a reproducible all-year rule-comparison workflow with separate original and revised household indices, quantity reconciliation and sample checks.
 
 - 2026-11-16: Record annual trend diagnostics and primary-method checks; keep conditional classification sensitivities separate from the original index results.
