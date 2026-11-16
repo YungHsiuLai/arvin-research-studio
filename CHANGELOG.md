@@ -1,5 +1,7 @@
 # Changelog
 
+- 2026-11-16: Add a step-by-step Stata workflow for linking annual household residence codes to existing indices, with preserved observations and explicit match checks.
+
 - 2026-11-10: Add reproducible county/state concentration summaries, cumulative-share charts and ranked tables to the local descriptive report; align page order and measurement labels.
 
 - 2026-11-10: Label descriptive report pages, figures and table columns with their measurement units; place county counts before decline rates and remove redundant introductory paragraphs.
