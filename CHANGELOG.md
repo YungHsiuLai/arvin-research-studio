@@ -1,5 +1,7 @@
 # Changelog
 
+- 2026-11-17: Add a bilingual standalone patent-licence example in Data analysis and repair Chinese text in the earlier comparison.
+
 - 2026-11-17: Keep the paper's egg description rule as the main specification; normalize standalone hyphenated abbreviations with brand-boundary checks and retain unsmoothed annual diagnostics.
 
 - 2026-11-17: Clarify original-versus-expanded classification comparisons and record source, quantity, weighting and category-scope checks; preserve existing numerical results and private audit evidence.
