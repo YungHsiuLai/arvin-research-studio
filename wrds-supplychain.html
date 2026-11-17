@@ -236,6 +236,8 @@
 .pipeline-scroll-hint{margin:-10px 0 12px;font-size:12px;line-height:1.7;color:var(--muted)}
 .pipeline-data dt{color:#7a5a1e}
 
+.analysis-highlights{margin-bottom:24px;font-size:14px;line-height:1.8;overflow-wrap:anywhere}.analysis-highlights h3{margin:0 0 8px;font-size:14px;font-weight:600}.analysis-highlights ul{margin:0;padding-left:20px}.analysis-highlights li{margin-bottom:8px}
+
 .questions-page{max-width:1400px;margin:0 auto;min-width:0;overflow-wrap:anywhere}
 .question-view-controls{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:22px}
 .question-view-controls [aria-pressed=true]{background:#284d3b;color:#fff;border-color:#284d3b}
@@ -581,6 +583,7 @@ body.is-resizing-column,body.is-resizing-column *{cursor:col-resize!important;us
     noAnalysis: ['這份資料集尚無經核查的分析紀錄。', 'No verified analysis record has been added for this dataset yet.'],
     objective: ['分析目的', 'Objective'], unit: ['觀察單位', 'Observation unit'], variables: ['使用變數', 'Variables'],
     specification: ['分析設定', 'Specification'], summary: ['結果摘要', 'Results summary'],
+    contractHighlights: ['合約重點', 'Contract highlights'],
     assistant: ['由助理執行', 'Executed by assistant'], user: ['由使用者執行', 'Executed by user'],
     completed: ['已執行', 'Execution completed'], recorded: ['已記錄', 'Recorded'], failed: ['執行失敗', 'Execution failed'], partial: ['部分完成', 'Partially completed'],
     artifact: ['開啟本機結果檔 ↗', 'Open local results ↗'],
@@ -1143,6 +1146,21 @@ body.is-resizing-column,body.is-resizing-column *{cursor:col-resize!important;us
       if (status === 'failed' || status === 'partial') metadata.append(label('span', 'badge neutral', status));
       const summary = element('summary', 'fold-summary library-summary', element('div', 'fold-heading', metadata, value('h2', '', record, 'title')), indicator('recordOpen', 'recordClose'));
       const body = element('div', 'analysis-record-body', element('dl', 'library-fields', field(record, 'objective', 'objective', 'library-field-wide'), field(record, 'unit', 'unit', 'library-field-wide'), field(record, 'variables'), field(record, 'specification', 'specification', 'library-field-wide'), field(record, 'summary', 'summary', 'library-field-wide'), field(record, 'limitations', 'limitations', 'library-field-wide evidence evidence-open')));
+      if (asArray(record.reviewed_report?.highlights).length) {
+        const sources = new Map(record.reviewed_report.sources.map(source => [source.id, source]));
+        const points = element('ul', 'analysis-highlight-points');
+        record.reviewed_report.highlights.forEach(point => {
+          const item = element('li', '', reportValue('span', 'analysis-highlight-text', point, 'text'));
+          point.source_ids.forEach(id => {
+            const source = sources.get(id); if (!source) return;
+            const link = label('a', 'analysis-report-source', 'reportEvidence');
+            link.href = source.url; link.target = '_blank'; link.rel = 'noopener noreferrer'; link.dataset.sourceId = id;
+            item.append(document.createTextNode(' '), link);
+          });
+          points.append(item);
+        });
+        body.prepend(element('section', 'analysis-highlights', label('h3', '', 'contractHighlights'), points));
+      }
       const report = renderReviewedReport(record.reviewed_report, record.id, dataset.id);
       if (report) body.append(report);
       if (!isPublic) {
