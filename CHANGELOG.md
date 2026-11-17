@@ -1,5 +1,7 @@
 # Changelog
 
+- 2026-11-17: Keep the paper's egg description rule as the main specification; normalize standalone hyphenated abbreviations with brand-boundary checks and retain unsmoothed annual diagnostics.
+
 - 2026-11-17: Clarify original-versus-expanded classification comparisons and record source, quantity, weighting and category-scope checks; preserve existing numerical results and private audit evidence.
 
 - 2026-11-16: Export reviewed before/after trend figures and annual comparison tables from completed Stata rule-comparison results; preserve the original reports.
