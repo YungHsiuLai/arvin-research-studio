@@ -1,5 +1,6 @@
 # Changelog
 
+- 2026-11-17: Place opening highlights on the standalone Navy–DarkPulse licence analysis and simplify its bilingual explanations while preserving source passages and contract terms.
 - 2026-11-17: Add bilingual opening highlights to the EDGAR contract comparison and simplify its explanations, with direct source links and preserved clause evidence.
 
 - 2026-11-17: Add a bilingual standalone patent-licence example in Data analysis and repair Chinese text in the earlier comparison.
