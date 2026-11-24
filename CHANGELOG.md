@@ -1,5 +1,7 @@
 # Changelog
 
+- 2026-11-24: Group Data analysis entries under collapsible date headings. Present the five B2B licence cases with dated titles, tagged gov, perf and attr highlights, folded clause evidence and collapsed tables; remove repeated rows and generic fields.
+
 - 2026-11-24: Pin the five B2B case highlights to exact excerpts and clause locations. Identify each case’s distinctive contract terms and label companion filings by the evidence they provide.
 
 - 2026-11-23: Add five bilingual company-to-company EDGAR licence cases covering pharmaceuticals, embedded software, industrial recycling, solar equipment and diagnostics. Include royalty bases, use rights, governance, outcome evidence and companion exhibits.

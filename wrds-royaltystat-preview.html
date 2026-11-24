@@ -238,6 +238,9 @@
 
 .analysis-highlights{margin-bottom:24px;font-size:14px;line-height:1.8;overflow-wrap:anywhere}.analysis-highlights h3{margin:0 0 8px;font-size:14px;font-weight:600}.analysis-highlights ul{margin:0;padding-left:20px}.analysis-highlights li{margin-bottom:8px}
 .analysis-highlight-text{white-space:pre-line}
+.analysis-date-group{border:1px solid #d8e3da;border-radius:11px;background:#f7faf5;min-width:0;overflow:hidden}.analysis-date-group+.analysis-date-group{margin-top:16px}.analysis-date-summary{padding:16px 21px;gap:16px}.analysis-date-heading{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;font-size:18px;line-height:1.45}.analysis-date-label{font-size:12px;font-weight:600;color:var(--muted)}.analysis-date-value{font-variant-numeric:tabular-nums}.analysis-date-count{display:block;margin-top:4px;font-size:12px;color:var(--muted)}.analysis-date-records{border-top:1px solid #e5ece4;padding:16px;display:grid;gap:14px;min-width:0}.analysis-date-records>.analysis-record+.analysis-record{margin-top:0}.analysis-run-date{display:inline}.analysis-run-date time{font-variant-numeric:tabular-nums}.analysis-record .library-summary h3{font-size:17px}.analysis-card-documents{margin:0 0 18px;font-size:13px;line-height:1.8;color:var(--muted);overflow-wrap:anywhere}.analysis-card-documents-label{font-weight:600;color:#52735d}.analysis-card-documents .analysis-report-source{display:inline;margin:0}.analysis-highlight-heading{font-weight:600;color:var(--ink,#203328)}.analysis-highlight-legend{margin:0 0 8px;font-size:12px;line-height:1.7;color:var(--muted)}.analysis-highlight-tag{display:inline-block;min-width:38px;text-align:center;font-size:12px;line-height:1.5;font-weight:600;padding:0 6px;border-radius:4px;vertical-align:1px}.analysis-highlight-tag-gov{background:var(--mint);color:var(--teal-dark)}.analysis-highlight-tag-perf{background:#eaf0f7;color:var(--blue)}.analysis-highlight-tag-attr{background:var(--sand);color:var(--amber)}.analysis-highlight-evidence{margin:4px 0 2px;font-size:12px;color:var(--muted)}.analysis-highlight-evidence>summary{cursor:pointer;width:max-content;max-width:100%}.analysis-highlight-evidence-lines{margin-top:4px;padding-left:10px;border-left:2px solid #d8e3da;line-height:1.7;overflow-wrap:anywhere}.analysis-highlight-evidence-links{margin-top:4px;padding-left:12px}
+@media(max-width:700px){.analysis-date-summary{padding:14px 16px;gap:10px}.analysis-date-heading{font-size:16px}.analysis-date-records{padding:10px;gap:10px}.analysis-record .library-summary h3{font-size:16px}.sidebar-autohide:not(.sidebar-collapsed) .analysis-date-group{border-left-width:0;border-right-width:0;border-radius:0}.sidebar-autohide:not(.sidebar-collapsed) .analysis-date-records{padding:6px 0}.sidebar-autohide:not(.sidebar-collapsed) .analysis-date-summary{padding:8px}}
+@media print{.analysis-date-records{padding:0}}
 
 .questions-page{max-width:1400px;margin:0 auto;min-width:0;overflow-wrap:anywhere}
 .question-view-controls{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:22px}
@@ -595,6 +598,11 @@ body.is-resizing-column,body.is-resizing-column *{cursor:col-resize!important;us
     resultUnreadable: ['本次結果檔無法讀取。', 'The result file for this run cannot be read.'],
     resultNotRegistered: ['本次執行尚未登記結果檔。', 'No result file is registered for this run.'],
     recordOpen: ['展開分析', 'Expand analysis'], recordClose: ['收合分析', 'Collapse analysis'],
+    dateGroupOpen: ['展開當日分析', 'Show analyses'], dateGroupClose: ['收合當日分析', 'Hide analyses'],
+    cardDocuments: ['原始文件', 'Source documents'],
+    highlightEvidence: ['條款依據', 'Clause evidence'],
+    highlightLegend: ['gov：合約對被授權方權益的安排；perf：被授權方的實際結果；attr：技術與交易特徵。', 'gov: how the contract governs the licensee’s rights; perf: the licensee’s actual results; attr: technology and deal characteristics.'],
+    analysisUpdated: ['更新日', 'Updated'], analysisRunDate: ['執行日', 'Run date'],
     reportOpen: ['展開結果表', 'Expand results table'], reportClose: ['收合結果表', 'Collapse results table'],
     reportEvidence: ['文件原文', 'Original document'],
     reportDocuments: ['查看原文', 'View original'],
@@ -1071,13 +1079,14 @@ body.is-resizing-column,body.is-resizing-column *{cursor:col-resize!important;us
     node.dataset.i18nZh = record[`${key}_zh`]; node.dataset.i18nEn = record[`${key}_en`]; node.dataset.i18nSkip = '';
     return node;
   }
-  function renderReviewedReport(report, recordId, datasetId) {
+  function renderReviewedReport(report, recordId, datasetId, contractCase = false) {
     if (!report || !asArray(report.sections).length) return null;
     const container = element('div', 'analysis-reviewed-report');
     container.dataset.analysisReportId = recordId;
     const sources = new Map(asArray(report.sources).map(source => [source.id, source]));
     report.sections.forEach((section, index) => {
-      const hasEvidence = section.rows.some(row => row.source_ids.length > 0);
+      // Contract cases list their documents once on the card instead of per row.
+      const hasEvidence = !contractCase && section.rows.some(row => row.source_ids.length > 0);
       const title = reportValue('h3', '', section, 'title'); title.id = `analysis-report-heading-${++sequence}`;
       const summary = element('summary', 'fold-summary analysis-report-summary', element('div', 'fold-heading', title), indicator('reportOpen', 'reportClose'));
       const header = element('tr', '', section.columns.map(column => {
@@ -1130,7 +1139,8 @@ body.is-resizing-column,body.is-resizing-column *{cursor:col-resize!important;us
         });
         body.prepend(documents);
       }
-      const card = fold(`analysis-report:${datasetId}:${recordId}:${section.id}`, 'analysis-report-section panel', summary, body, index === 0);
+      // Contract cases keep every table folded so the highlights lead.
+      const card = fold(`analysis-report:${datasetId}:${recordId}:${section.id}`, 'analysis-report-section panel', summary, body, index === 0 && !contractCase);
       card.dataset.reportSectionId = section.id; container.append(card);
     });
     return container;
@@ -1140,46 +1150,94 @@ body.is-resizing-column,body.is-resizing-column *{cursor:col-resize!important;us
     const analyses = asArray(records).filter(record => record.dataset_id === dataset.id);
     root.append(heading('analysis', 'analysisIntro'));
     if (!analyses.length) { root.append(label('p', 'library-empty', 'noAnalysis')); return; }
-    const stack = element('div', 'analysis-records');
+    // Group by the latest reviewed date (the report review date when present,
+    // otherwise the run date). Newest first; catalogue order within a date.
+    const groups = new Map();
     analyses.forEach(record => {
-      const status = /fail|error/.test(String(record.status)) ? 'failed' : /partial/.test(String(record.status)) ? 'partial' : /complete|success|verified/.test(String(record.status)) ? 'completed' : 'recorded';
-      const metadata = element('div', 'analysis-record-meta', value('span', 'library-category-badge', record, 'type'), raw('time', '', record.run_date || '—'));
-      if (status === 'failed' || status === 'partial') metadata.append(label('span', 'badge neutral', status));
-      const summary = element('summary', 'fold-summary library-summary', element('div', 'fold-heading', metadata, value('h2', '', record, 'title')), indicator('recordOpen', 'recordClose'));
-      const body = element('div', 'analysis-record-body', element('dl', 'library-fields', field(record, 'objective', 'objective', 'library-field-wide'), field(record, 'unit', 'unit', 'library-field-wide'), field(record, 'variables'), field(record, 'specification', 'specification', 'library-field-wide'), field(record, 'summary', 'summary', 'library-field-wide'), field(record, 'limitations', 'limitations', 'library-field-wide evidence evidence-open')));
-      if (asArray(record.reviewed_report?.highlights).length) {
-        const sources = new Map(record.reviewed_report.sources.map(source => [source.id, source]));
-        const points = element('ul', 'analysis-highlight-points');
-        record.reviewed_report.highlights.forEach(point => {
-          const item = element('li', '', reportValue('span', 'analysis-highlight-text', point, 'text'));
-          point.source_ids.forEach(id => {
-            const source = sources.get(id); if (!source) return;
-            const link = label('a', 'analysis-report-source', 'reportEvidence');
-            link.href = source.url; link.target = '_blank'; link.rel = 'noopener noreferrer'; link.dataset.sourceId = id;
-            item.append(document.createTextNode(' '), link);
-          });
-          points.append(item);
-        });
-        body.prepend(element('section', 'analysis-highlights', label('h3', '', 'contractHighlights'), points));
-      }
-      const report = renderReviewedReport(record.reviewed_report, record.id, dataset.id);
-      if (report) body.append(report);
-      if (!isPublic) {
-        if (record.result_status === 'available' && record.results !== undefined) {
-          const download = action('downloadResults', () => {
-            const url = URL.createObjectURL(new Blob([JSON.stringify(record.results, null, 2)], { type: 'application/json;charset=utf-8' }));
-            const link = document.createElement('a'); link.href = url; link.download = `${String(record.id || 'analysis').replace(/[^a-zA-Z0-9_-]/g, '_')}-results.json`; link.click(); setTimeout(() => URL.revokeObjectURL(url), 1000);
-          }, 'button small analysis-result-download');
-          body.append(element('div', 'analysis-result-actions', label('span', 'badge good', 'resultAvailable'), download));
-        } else if (record.result_status) {
-          const key = ({ missing: 'resultMissing', changed: 'resultChanged', unreadable: 'resultUnreadable', not_registered: 'resultNotRegistered' })[record.result_status] || 'resultUnavailable';
-          body.append(label('p', 'analysis-result-note', key));
-        }
-      }
-      const card = fold(`analysis:${dataset.id}:${record.id}`, 'analysis-record', summary, body, true);
-      card.dataset.analysisId = record.id; card.dataset.datasetId = record.dataset_id; stack.append(card);
+      const date = String(record.reviewed_report?.reviewed_at || record.run_date || '');
+      if (!groups.has(date)) groups.set(date, []);
+      groups.get(date).push(record);
+    });
+    const stack = element('div', 'analysis-records');
+    [...groups.entries()].sort(([a], [b]) => (a < b ? 1 : a > b ? -1 : 0)).forEach(([date, members]) => {
+      const count = members.length;
+      const groupTitle = element('h2', 'analysis-date-heading', label('span', 'analysis-date-label', 'analysisUpdated'), raw('time', 'analysis-date-value', date || '—'));
+      const countNode = bilingual('span', 'analysis-date-count', `${count} 筆分析`, `${count} ${count === 1 ? 'analysis' : 'analyses'}`);
+      const groupSummary = element('summary', 'fold-summary analysis-date-summary', element('div', 'fold-heading', groupTitle, countNode), indicator('dateGroupOpen', 'dateGroupClose'));
+      const list = element('div', 'analysis-date-records');
+      members.forEach(record => list.append(analysisCard(record, dataset, isPublic)));
+      const group = fold(`analysis-date:${dataset.id}:${date}`, 'analysis-date-group', groupSummary, list, false);
+      group.dataset.analysisDate = date; group.dataset.analysisCount = String(count);
+      stack.append(group);
     });
     root.append(stack);
+  }
+  function analysisCard(record, dataset, isPublic) {
+    const status = /fail|error/.test(String(record.status)) ? 'failed' : /partial/.test(String(record.status)) ? 'partial' : /complete|success|verified/.test(String(record.status)) ? 'completed' : 'recorded';
+    // Contract cases put the agreement date in the title; the generic analysis
+    // fields and run date stay in metadata but are not repeated on the card.
+    const contractCase = record.card_layout === 'contract_case';
+    const metadata = element('div', 'analysis-record-meta', value('span', 'library-category-badge', record, 'type'), contractCase ? null : element('span', 'analysis-run-date', label('span', 'analysis-run-date-label', 'analysisRunDate'), raw('span', '', ' '), raw('time', '', record.run_date || '—')));
+    // Contract cases omit the generic partial badge; open questions are stated in the text.
+    if (status === 'failed' || (status === 'partial' && !contractCase)) metadata.append(label('span', 'badge neutral', status));
+    const summary = element('summary', 'fold-summary library-summary', element('div', 'fold-heading', metadata, value('h3', '', record, 'title')), indicator('recordOpen', 'recordClose'));
+    const body = element('div', 'analysis-record-body', contractCase ? null : element('dl', 'library-fields', field(record, 'objective', 'objective', 'library-field-wide'), field(record, 'unit', 'unit', 'library-field-wide'), field(record, 'variables'), field(record, 'specification', 'specification', 'library-field-wide'), field(record, 'summary', 'summary', 'library-field-wide'), field(record, 'limitations', 'limitations', 'library-field-wide evidence evidence-open')));
+    if (asArray(record.reviewed_report?.highlights).length) {
+      const sources = new Map(record.reviewed_report.sources.map(source => [source.id, source]));
+      const points = element('ul', 'analysis-highlight-points');
+      record.reviewed_report.highlights.forEach(point => {
+        // Point first: an optional bold heading, then the plain-language point.
+        // Clause locators and original quotations fold underneath with the links.
+        const item = element('li', '');
+        if (point.category) item.append(raw('span', `analysis-highlight-tag analysis-highlight-tag-${point.category}`, point.category), raw('span', '', ' '));
+        if (point.heading_en || point.heading_zh) item.append(reportValue('strong', 'analysis-highlight-heading', point, 'heading'), raw('span', '', ' '));
+        item.append(reportValue('span', 'analysis-highlight-text', point, 'text'));
+        const links = point.source_ids.map(id => {
+          const source = sources.get(id); if (!source) return null;
+          const link = label('a', 'analysis-report-source', 'reportEvidence');
+          link.href = source.url; link.target = '_blank'; link.rel = 'noopener noreferrer'; link.dataset.sourceId = id;
+          return link;
+        }).filter(Boolean);
+        if (asArray(point.evidence).length) {
+          const lines = element('div', 'analysis-highlight-evidence-lines', point.evidence.map(line => raw('div', 'analysis-highlight-evidence-line', line)));
+          const linkRow = links.length ? element('div', 'analysis-highlight-evidence-links', links.flatMap((link, index) => index ? [raw('span', '', ' · '), link] : [link])) : null;
+          const details = element('details', 'analysis-highlight-evidence', element('summary', '', label('span', '', 'highlightEvidence')), lines, linkRow);
+          details.addEventListener('toggle', () => { if (details.isConnected) announceLayout(); }, { signal: activeView.controller.signal });
+          item.append(details);
+        } else links.forEach(link => item.append(document.createTextNode(' '), link));
+        points.append(item);
+      });
+      const legend = record.reviewed_report.highlights.some(point => point.category) ? label('p', 'analysis-highlight-legend', 'highlightLegend') : null;
+      body.prepend(element('section', 'analysis-highlights', label('h3', '', 'contractHighlights'), legend, points));
+    }
+    if (contractCase && asArray(record.reviewed_report?.sources).length) {
+      const documents = element('p', 'analysis-card-documents', label('span', 'analysis-card-documents-label', 'cardDocuments'), raw('span', '', ': '));
+      record.reviewed_report.sources.forEach((source, index) => {
+        if (index) documents.append(raw('span', 'analysis-card-documents-sep', ' · '));
+        const link = raw('a', 'analysis-report-source', source.label);
+        link.href = source.url; link.target = '_blank'; link.rel = 'noopener noreferrer'; link.dataset.sourceId = source.id;
+        documents.append(link);
+      });
+      const highlights = body.querySelector(':scope > .analysis-highlights');
+      if (highlights) highlights.after(documents); else body.prepend(documents);
+    }
+    const report = renderReviewedReport(record.reviewed_report, record.id, dataset.id, contractCase);
+    if (report) body.append(report);
+    if (!isPublic) {
+      if (record.result_status === 'available' && record.results !== undefined) {
+        const download = action('downloadResults', () => {
+          const url = URL.createObjectURL(new Blob([JSON.stringify(record.results, null, 2)], { type: 'application/json;charset=utf-8' }));
+          const link = document.createElement('a'); link.href = url; link.download = `${String(record.id || 'analysis').replace(/[^a-zA-Z0-9_-]/g, '_')}-results.json`; link.click(); setTimeout(() => URL.revokeObjectURL(url), 1000);
+        }, 'button small analysis-result-download');
+        body.append(element('div', 'analysis-result-actions', label('span', 'badge good', 'resultAvailable'), download));
+      } else if (record.result_status) {
+        const key = ({ missing: 'resultMissing', changed: 'resultChanged', unreadable: 'resultUnreadable', not_registered: 'resultNotRegistered' })[record.result_status] || 'resultUnavailable';
+        body.append(label('p', 'analysis-result-note', key));
+      }
+    }
+    const card = fold(`analysis:${dataset.id}:${record.id}`, 'analysis-record', summary, body, false);
+    card.dataset.analysisId = record.id; card.dataset.datasetId = record.dataset_id;
+    return card;
   }
   window.ResearchLibrary = { renderMethods, renderAnalysis, renderPipeline, methodSearchFields, clear };
 })();
