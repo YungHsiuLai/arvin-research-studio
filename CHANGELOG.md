@@ -1,5 +1,7 @@
 # Changelog
 
+- 2026-11-24: Pin the five B2B case highlights to exact excerpts and clause locations. Identify each case’s distinctive contract terms and label companion filings by the evidence they provide.
+
 - 2026-11-23: Add five bilingual company-to-company EDGAR licence cases covering pharmaceuticals, embedded software, industrial recycling, solar equipment and diagnostics. Include royalty bases, use rights, governance, outcome evidence and companion exhibits.
 
 - 2026-11-17: Place opening highlights on the standalone Navy–DarkPulse licence analysis and simplify its bilingual explanations while preserving source passages and contract terms.
