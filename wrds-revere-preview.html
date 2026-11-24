@@ -241,6 +241,7 @@
 .analysis-date-group{border:1px solid #d8e3da;border-radius:11px;background:#f7faf5;min-width:0;overflow:hidden}.analysis-date-group+.analysis-date-group{margin-top:16px}.analysis-date-summary{padding:16px 21px;gap:16px}.analysis-date-heading{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;font-size:18px;line-height:1.45}.analysis-date-label{font-size:12px;font-weight:600;color:var(--muted)}.analysis-date-value{font-variant-numeric:tabular-nums}.analysis-date-count{display:block;margin-top:4px;font-size:12px;color:var(--muted)}.analysis-date-records{border-top:1px solid #e5ece4;padding:16px;display:grid;gap:14px;min-width:0}.analysis-date-records>.analysis-record+.analysis-record{margin-top:0}.analysis-run-date{display:inline}.analysis-run-date time{font-variant-numeric:tabular-nums}.analysis-record .library-summary h3{font-size:17px}.analysis-card-documents{margin:0 0 18px;font-size:13px;line-height:1.8;color:var(--muted);overflow-wrap:anywhere}.analysis-card-documents-label{font-weight:600;color:#52735d}.analysis-card-documents .analysis-report-source{display:inline;margin:0}.analysis-highlight-heading{font-weight:600;color:var(--ink,#203328)}.analysis-highlight-legend{margin:0 0 8px;font-size:12px;line-height:1.7;color:var(--muted)}.analysis-highlight-tag{display:inline-block;min-width:38px;text-align:center;font-size:12px;line-height:1.5;font-weight:600;padding:0 6px;border-radius:4px;vertical-align:1px}.analysis-highlight-tag-gov{background:var(--mint);color:var(--teal-dark)}.analysis-highlight-tag-perf{background:#eaf0f7;color:var(--blue)}.analysis-highlight-tag-attr{background:var(--sand);color:var(--amber)}.analysis-highlight-evidence{margin:4px 0 2px;font-size:12px;color:var(--muted)}.analysis-highlight-evidence>summary{cursor:pointer;width:max-content;max-width:100%}.analysis-highlight-evidence-lines{margin-top:4px;padding-left:10px;border-left:2px solid #d8e3da;line-height:1.7;overflow-wrap:anywhere}.analysis-highlight-evidence-links{margin-top:4px;padding-left:12px}
 @media(max-width:700px){.analysis-date-summary{padding:14px 16px;gap:10px}.analysis-date-heading{font-size:16px}.analysis-date-records{padding:10px;gap:10px}.analysis-record .library-summary h3{font-size:16px}.sidebar-autohide:not(.sidebar-collapsed) .analysis-date-group{border-left-width:0;border-right-width:0;border-radius:0}.sidebar-autohide:not(.sidebar-collapsed) .analysis-date-records{padding:6px 0}.sidebar-autohide:not(.sidebar-collapsed) .analysis-date-summary{padding:8px}}
 @media print{.analysis-date-records{padding:0}}
+.analysis-report-table:has(.analysis-report-quote){min-width:860px}
 
 .questions-page{max-width:1400px;margin:0 auto;min-width:0;overflow-wrap:anywhere}
 .question-view-controls{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:22px}
@@ -601,7 +602,7 @@ body.is-resizing-column,body.is-resizing-column *{cursor:col-resize!important;us
     dateGroupOpen: ['展開當日分析', 'Show analyses'], dateGroupClose: ['收合當日分析', 'Hide analyses'],
     cardDocuments: ['原始文件', 'Source documents'],
     highlightEvidence: ['條款依據', 'Clause evidence'],
-    highlightLegend: ['gov：合約對被授權方權益的安排；perf：被授權方的實際結果；attr：技術與交易特徵。', 'gov: how the contract governs the licensee’s rights; perf: the licensee’s actual results; attr: technology and deal characteristics.'],
+    highlightLegend: ['gov（governance，治理）：合約對被授權方權益的安排；perf（performance，績效）：被授權方的實際結果；attr（attributes，屬性）：技術與交易特徵。', 'gov (governance): how the contract governs the licensee’s rights; perf (performance): the licensee’s actual results; attr (attributes): technology and deal characteristics.'],
     analysisUpdated: ['更新日', 'Updated'], analysisRunDate: ['執行日', 'Run date'],
     reportOpen: ['展開結果表', 'Expand results table'], reportClose: ['收合結果表', 'Collapse results table'],
     reportEvidence: ['文件原文', 'Original document'],
@@ -1102,7 +1103,10 @@ body.is-resizing-column,body.is-resizing-column *{cursor:col-resize!important;us
         const tr = element('tr', 'analysis-report-row'); tr.dataset.reportRowId = row.id;
         row.cells.forEach((cell, columnIndex) => {
           const td = reportValue(columnIndex ? 'td' : 'th', 'analysis-report-cell', cell, 'text');
-          if (!columnIndex) td.scope = 'row'; tr.append(td);
+          if (!columnIndex) td.scope = 'row';
+          // Original contract sentences stay English in both interface languages.
+          if (section.columns[columnIndex]?.id === 'quote') { td.lang = 'en'; td.classList.add('analysis-report-quote'); }
+          tr.append(td);
         });
         if (hasEvidence) {
           const evidence = element('td', 'analysis-report-evidence');

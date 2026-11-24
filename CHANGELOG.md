@@ -1,5 +1,7 @@
 # Changelog
 
+- 2026-11-24: Reread the five B2B licence agreements in full. Add an original-sentence column to every case table and two governance rows on infringement enforcement and use after the licensee ends the contract; correct several terms, spell out English abbreviations at first use and refresh bundled font coverage.
+
 - 2026-11-24: Group Data analysis entries under collapsible date headings. Present the five B2B licence cases with dated titles, tagged gov, perf and attr highlights, folded clause evidence and collapsed tables; remove repeated rows and generic fields.
 
 - 2026-11-24: Pin the five B2B case highlights to exact excerpts and clause locations. Identify each case’s distinctive contract terms and label companion filings by the evidence they provide.
